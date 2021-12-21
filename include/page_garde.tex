@@ -1,0 +1,148 @@
+\documentclass[12pt,a4paper, x11names]{article}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}}}
+\makeatother
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+}}
+\makeatother
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage[left=2cm,right=1.5cm,top=2.5cm,bottom=3cm,footskip=1.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots,tikz}
+\usetikzlibrary{matrix}
+\usepackage{enumitem}  
+\usepackage[normalem]{ulem}
+%fonts change 
+\usepackage[charter]{mathdesign}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable,xparse}
+\usepackage{shadowtext}
+\usepackage[explicit]{titlesec}
+\usepackage{setspace}
+\setstretch{1.5}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{1pt}
+\lhead{\fontfamily{pzc}\fontsize{.5cm}{0cm}\selectfont HARIZ Khaled}
+\rhead{\fontfamily{pzc}\fontsize{.5cm}{.5cm}\selectfont 2015-2016}
+\setlist[enumerate,1]{label=\arabic*)}
+\setlength{\parindent}{0mm}
+\renewcommand{\d}{\,\mathrm{d}}    
+
+
+\titleformat{\subsection}{\Large\bfseries}
+{\tcbox[arc=10pt,colback=Cyan1, colframe=Cyan1, coltext=black, boxsep=0pt, left=4pt, right=.7\textwidth, top=4pt, bottom=4pt,sharp corners=northwest]{ Correction #1}}{0.2em}{}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+  \thispagestyle{empty}
+  
+  \begin{tikzpicture}[remember picture,overlay]
+  \node at (current page.south west)
+  {\begin{tikzpicture}[remember picture, overlay]
+    \shade[bottom color=LightBlue1,top color=white] (0,0) rectangle
+    (\paperwidth,.7\paperheight);
+    \node [color=gray!50,rotate=-20]at (0.35\textwidth,9){\resizebox{7cm}{1.5cm}{$\displaystyle u(x)\approx U_h=\sum_{j=1}^{N}c_j\varphi_j(x)$}};
+    \node [color=gray!50,rotate=-5]at (.8\textwidth,5){\resizebox{9cm}{1.5cm}{$ \displaystyle u''(x_i ) \approx\dfrac{1}{h^2}\left[u(x_{ i+1} ) - 2u(x_i ) + u(x_{i-1 } )\right] $}
+    };
+    \end{tikzpicture}
+  };
+  
+  \end{tikzpicture}
+  \vspace{-1cm}
+  %-----------------------------------------------------------------------------------
+    %  page de garde
+  %-----------------------------------------------------------------------------------
+    \begin{center}
+  {\Large RÉPUBLIQUE  ALGÉRIENNE DÉMOCRATIQUE ET POPULAIRE}\\
+  \begin{large}
+  Ministère de L'enseignement Supérieur et de la Recherche Scientifique\\ 
+École Normale Supérieure, Vieux Kouba - Alger\\  
+Département de  Mathématiques\\ 
+ Laboratoire  d'{\fontfamily{pzc}\fontsize{.55cm}{0cm}\selectfont EDPNL } et {\fontfamily{pzc}\fontsize{.55cm}{0cm}\selectfont HM } \\  
+  \bigskip
+  \includegraphics[scale=0.5]{ens.jpg} \\
+  $1^{\mbox{\small ére}}$ année  Magister\\ \bigskip
+  \textbf{ Modélisation  Mathématique et  Analyse Numérique
+  } \end{large}
+  \end{center}
+  \bigskip
+  \shadowoffset{3pt}
+  \begin{tcolorbox}[blanker,top=1.2cm,bottom=1.2cm,borderline horizontal={4pt}{0pt}{DodgerBlue1},colupper=red]
+  \begin{center}
+  \shadowtext{\resizebox{\textwidth}{1.5cm}{\textbf{Corrige exercices sur les éléments finies} }}
+  \end{center}
+  \end{tcolorbox}
+  
+  
+  \bigskip
+  
+  \begin{center}
+  \begin{large}
+  
+  {\bf prépare par:} HARIZ BELGACEM Khaled
+  \\  \bigskip
+  {\bf proposé par:} Pr Youcef ATIK\\  \medskip 
+  \end{large}
+  \end{center}
+  
+  \vspace*{\fill}
+  \textcolor{DodgerBlue1}{\rule{.82\textwidth}{4pt}\hfill {\fontfamily{pzc}\fontsize{.7cm}{0cm}\selectfont 2015-2016 }}
+  \end{document}

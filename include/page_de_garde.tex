@@ -1,0 +1,57 @@
+\begin{titlepage}
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture,overlay]
+\node at (current page.south west)
+{\begin{tikzpicture}[remember picture, overlay]
+  \shade[bottom color=bubblegum,top color=white] (0,0) rectangle
+  (\paperwidth,.7\paperheight);
+  \node [color=gray!50,rotate=-20]at (0.35\textwidth,9){\resizebox{7cm}{1.5cm}{$\displaystyle u(x)\approx U_h=\sum_{j=1}^{N}c_j\varphi_j(x)$}};
+  \node [color=gray!50,rotate=-5]at (.8\textwidth,5){\resizebox{9cm}{1.5cm}{$ \displaystyle u''(x_i ) \approx\dfrac{1}{h^2}\left[u(x_{ i+1} ) - 2u(x_i ) + u(x_{i-1 } )\right] $}
+  };
+  \end{tikzpicture}
+};
+
+\end{tikzpicture}
+\vspace{-1cm}
+%-----------------------------------------------------------------------------------
+  %  page de garde
+%-----------------------------------------------------------------------------------
+  \begin{center}
+
+\begin{large}
+\includegraphics[scale=0.5]{Images/logocnam.png} \\
+\textsc{Certificat de spécialisation analyste de données massives}\\ \bigskip
+\textbf{ Entreposage et fouille de données
+} \end{large}
+\end{center}
+\bigskip
+\shadowoffset{3pt}
+\begin{tcolorbox}[blanker,top=1.2cm,bottom=1.2cm,borderline horizontal={4pt}{0pt}{charcoal},colupper=bluePoli]
+\begin{center}
+\shadowtext{\resizebox{\textwidth}{1.5cm}{\textbf{Projet de STA211} }}
+\end{center}
+\end{tcolorbox}
+
+
+\bigskip
+
+\begin{minipage}{0.4\textwidth}
+\large
+\emph{Auteurs:}\\
+\authora\\[3mm]
+\authorb\\[3mm]
+\authorc\\[3mm]
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\textwidth}
+ \large
+\emph{Professeur:}\\
+\advisor\\[3mm]
+\\[3mm]
+\\[3mm]
+\end{minipage}\\[2cm] 
+
+
+\textcolor{charcoal}{\rule{.82\textwidth}{4pt}\hfill {\fontfamily{pzc}\fontsize{.7cm}{0cm}\selectfont \YEAR }}
+\end{titlepage}

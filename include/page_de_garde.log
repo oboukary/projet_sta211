@@ -1,0 +1,27 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.12.20)  21 DEC 2021 20:14
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**/home/boukary/Bureau/2021/STA211/projet/include/page_de_garde.tex
+(/home/boukary/Bureau/2021/STA211/projet/include/page_de_garde.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2021-11-22>
+
+! LaTeX Error: Environment titlepage undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{titlepage}
+                      
+Here is how much of TeX's memory you used:
+ 18 strings out of 480293
+ 689 string characters out of 5896315
+ 291010 words of memory out of 5000000
+ 17999 multiletter control sequences out of 15000+600000
+ 403430 words of font info for 27 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 13i,0n,12p,114b,16s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+!  ==> Fatal error occurred, no output PDF file produced!
