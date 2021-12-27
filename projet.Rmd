@@ -1,0 +1,143 @@
+---
+geometry: "left=2cm,right=2cm,top=2cm,bottom=2cm"
+fontsize: 11pt
+documentclass: "article"
+output: 
+  pdf_document: 
+    includes:
+      in_header: include/preambule.tex
+      before_body: include/page_de_garde.tex
+    highlight: pygments
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r packages, echo=FALSE,message=FALSE}
+library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(FactoMineR)
+library(factoextra)
+library(caret)
+library(ade4)
+library(prettyR)
+library(plotly)
+library(hrbrthemes)
+library(viridis)
+library(forcats)
+library(ggplot2)
+library(faraway)
+library(corrplot)
+library(kableExtra)
+library(papeR)
+```
+
+```{r importer les données, message=FALSE, echo=FALSE}
+donnees <- read.table(file = "Donnees_CNL.csv",
+                      header=TRUE, 
+                      sep=";"
+                      ,fileEncoding="latin1") 
+
+#----- Extraire la partie du nom des colonnes après le point ------------------
+names(donnees) <- sub(".*\\.", "", names(donnees))
+
+#------ Selection des variables en rapport avec le menage-----------------------
+data_menage <- donnees %>% 
+  select(Sexe, Diplome_Max, Type_Prof, Occupation, Source_ppale_Res, 
+         Structure_menage, Age, Revenus, TYPEMEN, Nb_Enfants_sup_10,
+         Nb_Enfants_inf_10) %>% 
+  mutate(Sexe             = as.factor(as.character(Sexe)),
+         Diplome_Max      = as.factor(as.character(Diplome_Max)),
+         Type_Prof        = as.factor(as.character(Type_Prof)),
+         Occupation       = as.factor(as.character(Occupation)),
+         Source_ppale_Res = as.factor(as.character(Source_ppale_Res)),
+         Structure_menage = as.factor(as.character(Structure_menage))
+         )
+```
+
+
+## Analyse univariée
+Dans cette partie nous allons explorer les données en réalisant des analyses univariées simples.
+Nous regarderons les statistiques descriptives simples de chacune des variables, puis nous effectuerons des
+
+```{=latex}
+\begin{minipage}[t]{0.5\linewidth}
+```
+```{r analyse univarié}
+# Analyse univarié simple avec summary
+summary(data_menage)
+```
+```{=latex}
+\end{minipage}
+\vfill
+```
+
+```{=latex}
+\begin{minipage}[t]{1\linewidth}
+```
+```{r describe de prettyR}
+data_menage %>% 
+  describe()
+```
+```{=latex}
+\end{minipage}
+\vfill
+```
+
+Dans cette partie, on sépare le jeu de données initiales en deux. Une partie contenant les variables catégorielles et une partie contenant les variables numériques.
+```{r base numerique vs base categorielle}
+num_cols <- unlist(lapply(data_menage, is.numeric)) 
+cat_col  <- unlist(lapply(data_menage, is.character))
+num_data <- data_menage[, num_cols]
+cat_data <- data_menage[,cat_col]
+```
+
+
+```{r}
+data_hist <- num_data %>%
+  gather(key="text", value="value") %>%
+  mutate(text = gsub("\\.", "-",text)) %>%
+  mutate(value = round(as.numeric(value),0))
+```
+
+```{r}
+# p <- data_hist %>%
+#   mutate(text = fct_reorder(text, value)) %>%
+#   ggplot( aes(x=value, color=text, fill=text)) +
+#     geom_histogram(alpha=0.6, binwidth = 5) +
+#    # scale_fill_viridis(discrete=TRUE) +
+#    # scale_color_viridis(discrete=TRUE) +
+#     theme_ipsum() +
+#     theme(
+#       legend.position="none",
+#       panel.spacing = unit(0.1, "lines"),
+#       strip.text.x = element_text(size = 8)
+#     ) +
+#     xlab("") +
+#     facet_wrap(~text)
+# p
+```
+
+```{=latex}
+\begin{figure}
+
+```
+```{r corrélation, echo=FALSE}
+num_corr<- cor(num_data)
+corrplot(num_corr, tl.col = "red", bg = "White", tl.srt = 35, 
+         addCoef.col = "black", type = "full")
+```
+```{=latex}
+\caption{Matrice de corrélation entre les variables numériques du jeu de données}
+\end{figure}
+```
+Les corrélations entre les variables numériques sont faibles dans la majorité des cas.
+
+
+
+
+
+
+
+
