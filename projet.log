@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2021.12.23)  27 DEC 2021 20:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.1.1)  2 JAN 2022 14:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -327,7 +327,7 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 \Gin@req@height=\dimen161
 \Gin@req@width=\dimen162
 ) (/home/boukary/.TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2021/11/29 3.67 The Babel package
+Package: babel 2021/12/30 3.69 The Babel package
 \babel@savecnt=\count289
 \U@D=\dimen163
 \l@unhyphenated=\language4
@@ -1441,89 +1441,93 @@ LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <19.91684> not available
 [1
 
 {/home/boukary/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Images/logocnam.png>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 332.
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 13.82408pt on input line 321.
+LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
+(Font)              scaled to size 13.82408pt on input line 321.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 331.
 (/home/boukary/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (215.40543pt too wide) in paragraph at lines 339--339
+Overfull \hbox (215.40543pt too wide) in paragraph at lines 338--338
 []\T1/lmtt/m/n/10.95 ##  Sexe      Diplome_Max  Type_Prof Occupation Source_ppale_Res Structure_menage 
  []
 
 
-Overfull \hbox (157.91809pt too wide) in paragraph at lines 340--340
+Overfull \hbox (157.91809pt too wide) in paragraph at lines 339--339
 []\T1/lmtt/m/n/10.95 ##  1: 549   4      :454   1: 36     1:777      1:845            1: 398[] 
  []
 
 
-Overfull \hbox (157.91809pt too wide) in paragraph at lines 341--341
+Overfull \hbox (157.91809pt too wide) in paragraph at lines 340--340
 []\T1/lmtt/m/n/10.95 ##  2:1018   8      :175   2: 70     2: 80      2: 87            2: 103[] 
  []
 
 
-Overfull \hbox (157.91809pt too wide) in paragraph at lines 342--342
+Overfull \hbox (157.91809pt too wide) in paragraph at lines 341--341
 []\T1/lmtt/m/n/10.95 ##           1      :171   3:435     3: 50      3:493            3:1053[] 
  []
 
 
-Overfull \hbox (157.91809pt too wide) in paragraph at lines 343--343
+Overfull \hbox (157.91809pt too wide) in paragraph at lines 342--342
 []\T1/lmtt/m/n/10.95 ##           9      :168   4:391     4:541      4: 71            4:  13[] 
  []
 
 
-Overfull \hbox (54.44089pt too wide) in paragraph at lines 344--344
+Overfull \hbox (54.44089pt too wide) in paragraph at lines 343--343
 []\T1/lmtt/m/n/10.95 ##           6      :157   5:297     5: 45      5: 71[] 
  []
 
 
-Overfull \hbox (140.67189pt too wide) in paragraph at lines 347--347
+Overfull \hbox (140.67189pt too wide) in paragraph at lines 346--346
 []\T1/lmtt/m/n/10.95 ##       Age           Revenus        TYPEMEN      Nb_Enfants_sup_10[] 
  []
 
 
-Overfull \hbox (123.42569pt too wide) in paragraph at lines 348--348
+Overfull \hbox (123.42569pt too wide) in paragraph at lines 347--347
 []\T1/lmtt/m/n/10.95 ##  Min.   :18.00   Min.   : 535   Min.   :1.000   Min.   :0.0000[] 
  []
 
 
-Overfull \hbox (123.42569pt too wide) in paragraph at lines 349--349
+Overfull \hbox (123.42569pt too wide) in paragraph at lines 348--348
 []\T1/lmtt/m/n/10.95 ##  1st Qu.:41.00   1st Qu.:1799   1st Qu.:3.000   1st Qu.:0.0000[] 
  []
 
 
-Overfull \hbox (123.42569pt too wide) in paragraph at lines 350--350
+Overfull \hbox (123.42569pt too wide) in paragraph at lines 349--349
 []\T1/lmtt/m/n/10.95 ##  Median :52.00   Median :2349   Median :5.000   Median :0.0000[] 
  []
 
 
-Overfull \hbox (123.42569pt too wide) in paragraph at lines 351--351
+Overfull \hbox (123.42569pt too wide) in paragraph at lines 350--350
 []\T1/lmtt/m/n/10.95 ##  Mean   :51.87   Mean   :2573   Mean   :4.754   Mean   :0.4359[] 
  []
 
 
-Overfull \hbox (123.42569pt too wide) in paragraph at lines 352--352
+Overfull \hbox (123.42569pt too wide) in paragraph at lines 351--351
 []\T1/lmtt/m/n/10.95 ##  3rd Qu.:61.50   3rd Qu.:2899   3rd Qu.:7.000   3rd Qu.:1.0000[] 
  []
 
 
-Overfull \hbox (123.42569pt too wide) in paragraph at lines 353--353
+Overfull \hbox (123.42569pt too wide) in paragraph at lines 352--352
 []\T1/lmtt/m/n/10.95 ##  Max.   :89.00   Max.   :7600   Max.   :7.000   Max.   :3.0000[] 
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.426 
+l.425 
        [1]
 Overfull \vbox (181.1414pt too high) has occurred while \output is active []
 
 [2]
-<projet_files/figure-latex/corrélation-1.pdf, id=33, 469.755pt x 325.215pt>
+<projet_files/figure-latex/corrélation-1.pdf, id=32, 469.755pt x 325.215pt>
 File: projet_files/figure-latex/corrélation-1.pdf Graphic file (type pdf)
 <use projet_files/figure-latex/corrélation-1.pdf>
-Package pdftex.def Info: projet_files/figure-latex/corrélation-1.pdf  used on input line 471.
+Package pdftex.def Info: projet_files/figure-latex/corrélation-1.pdf  used on input line 470.
 (pdftex.def)             Requested size: 469.75386pt x 325.2142pt.
 LaTeX Font Info:    Font shape `T1/mdbch/m/fsc' will be
-(Font)              scaled to size 10.51207pt on input line 473.
+(Font)              scaled to size 10.51207pt on input line 472.
 
 Package caption Warning: Unused \captionsetup[table] on input line 172.
 See the caption package documentation for explanation.
@@ -1534,18 +1538,18 @@ See the caption package documentation for explanation.
 
 [3] [4 <./projet_files/figure-latex/corrélation-1.pdf>] (./projet.aux) ) 
 Here is how much of TeX's memory you used:
- 47747 strings out of 480293
- 1068602 string characters out of 5896315
- 1494733 words of memory out of 5000000
- 64651 multiletter control sequences out of 15000+600000
- 461131 words of font info for 157 fonts, out of 8000000 for 9000
+ 47761 strings out of 480293
+ 1068738 string characters out of 5896317
+ 1494710 words of memory out of 5000000
+ 64649 multiletter control sequences out of 15000+600000
+ 466877 words of font info for 169 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  83i,17n,80p,1195b,1143s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/home/boukary/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/boukary/.TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{/home/boukary/.TinyTeX/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</home/boukary/.TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7t.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7y.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on projet.pdf (5 pages, 123086 bytes).
+Output written on projet.pdf (5 pages, 123008 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 55333 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 95 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
+ 6 named destinations out of 1000 (max. 500000)
+ 63525 words of extra memory for PDF output out of 74296 (max. 10000000)
 

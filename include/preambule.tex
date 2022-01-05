@@ -1,15 +1,20 @@
 \usepackage[utf8]{inputenc}
 \usepackage[french]{babel}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref} 
 \usepackage[T1]{fontenc} % Font encoding
 \usepackage{graphicx}
 \graphicspath{{Images/}}
 \usepackage{eso-pic} 
 \usepackage{subfig} 
 \usepackage{caption} 
+\usepackage{tabu}
+\usepackage{longtable}
 \usepackage{transparent}
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{bm}
+\usepackage{mdframed}
 \usepackage[overload]{empheq}  
 \usepackage{tabularx}
 \usepackage{longtable}
@@ -25,22 +30,58 @@
 \usepackage{tcolorbox} 
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{pgfplots,tikz}
-\usepackage{booktabs} 
 \usetikzlibrary{matrix}
 \usepackage{enumitem}  
 \usepackage[normalem]{ulem}
 %fonts change 
 \usepackage[charter]{mathdesign}
+\usepackage{fancybox,framed}
 \tcbuselibrary{skins,breakable,xparse}
 \usepackage{shadowtext}
-\usepackage[explicit]{titlesec}
+\usepackage{titlesec}
 \usepackage{setspace}
+
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{capt-of}
+
+%dashed line
+\usepackage{array}
+\usepackage{arydshln}
+\setlength\dashlinedash{0.2pt}
+\setlength\dashlinegap{1.5pt}
+\setlength\arrayrulewidth{0.3pt}
+
+%Widows & Orphans & Penalties
+
+\widowpenalty500
+\clubpenalty500
+\clubpenalty=9996
+\exhyphenpenalty=50 %for line-breaking at an explicit hyphen
+\brokenpenalty=4991
+\predisplaypenalty=10000
+\postdisplaypenalty=1549
+\displaywidowpenalty=1602
+\floatingpenalty = 20000
 \setstretch{1.5}
 \pagestyle{fancy}
 \renewcommand{\footrulewidth}{0pt}
 \renewcommand{\headrulewidth}{1pt}
 \setlist[enumerate,1]{label=\arabic*)}
 \setlength{\parindent}{0mm}
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection .}{1.5mm}{}
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1.5mm}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1.5mm}{}
+\titleformat{\paragraph}[runin]
+{\normalfont\normalsize\bfseries}{\theparagraph}{1.5mm}{}
+\titleformat{\subparagraph}[runin]
+{\normalfont\normalsize\bfseries}{\thesubparagraph}{1.5mm}{}
+
 \renewcommand{\d}{\,\mathrm{d}}    
 
 \renewcommand{\title}{Certificat de spécialisation analyste de données massives}
@@ -58,78 +99,3 @@
 \newcommand{\ID}{Student ID}
 % -> academic year
 \newcommand{\YEAR}{2021-2022}
-
-\definecolor{bluePoli}{cmyk}{0.4,0.1,0,0.4}
-\definecolor{babyblueeyes}{rgb}{0.63, 0.79, 0.95}
-\definecolor{blush}{rgb}{0.87, 0.36, 0.51}
-\definecolor{bubblegum}{rgb}{0.99, 0.76, 0.8}
-\definecolor{charcoal}{rgb}{0.21, 0.27, 0.31}
-% Custom theorem environments
-\declaretheoremstyle[
-  headfont=\color{bluePoli}\normalfont\bfseries,
-  bodyfont=\color{black}\normalfont\itshape,
-]{colored}
-
-\captionsetup[figure]{labelfont={color=charcoal}} % Set colour of the captions
-\captionsetup[table]{labelfont={color=charcoal}} % Set colour of the captions
-\captionsetup[algorithm]{labelfont={color=charcoal}} % Set colour of the captions
-
-\theoremstyle{colored}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{proposition}{Proposition}[section]
-
-% Enhances the features of the standard "table" and "tabular" environments.
-\newcommand\T{\rule{0pt}{2.6ex}}
-\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
-
-% Algorithm description
-\newcounter{algsubstate}
-\renewcommand{\thealgsubstate}{\alph{algsubstate}}
-\newenvironment{algsubstates}{
-  \setcounter{algsubstate}{0}%
-  \renewcommand{\STATE}{%
-    \stepcounter{algsubstate}%
-    \Statex {\small\thealgsubstate:}\space}
-}{}
-
-% Custom theorem environment
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-  \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-    \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-      
-      % Custom itemize environment
-      \setlist[itemize,1]{label=$\bullet$}
-      \setlist[itemize,2]{label=$\circ$}
-      \setlist[itemize,3]{label=$-$}
-      \setlist{nosep}
-      
-      % Create command for background pic
-      \newcommand\BackgroundPic{% Adding background picture
-        \put(237,365){
-          \parbox[b][\paperheight]{\paperwidth}{%
-            \vfill
-            \centering
-            \transparent{0.4}
-            \includegraphics[width=0.44\paperwidth]{raggiera_polimi.eps}%
-            \vfill}
-        }
-      }
-      
-      % Set indentation
-      \setlength\parindent{0pt}
-      
-      % Custom title commands
-      
-      % Custom headers and footers
-      \pagestyle{fancy}
-      \fancyhf{}
-      
-      \fancyfoot{}
-      \fancyfoot[C]{\thepage} % page
-      \renewcommand{\headrulewidth}{0mm} % headrule width
-      \renewcommand{\footrulewidth}{0mm} % footrule width
-      
-      \makeatletter
-      \patchcmd{\headrule}{\hrule}{\color{black}\hrule}{}{} % headrule
-      \patchcmd{\footrule}{\hrule}{\color{black}\hrule}{}{} % footrule
-      \makeatother

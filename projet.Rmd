@@ -5,8 +5,8 @@ documentclass: "article"
 output: 
   pdf_document: 
     includes:
-      in_header: include/preambule.tex
-      before_body: include/page_de_garde.tex
+      in_header: include/preambule1.tex
+      before_body: include/page_de_garde1.tex
     highlight: pygments
 ---
 
@@ -56,8 +56,10 @@ data_menage <- donnees %>%
          )
 ```
 
+```{=latex}
+\section{Introduction}
+```
 
-## Analyse univariée
 Dans cette partie nous allons explorer les données en réalisant des analyses univariées simples.
 Nous regarderons les statistiques descriptives simples de chacune des variables, puis nous effectuerons des
 
@@ -133,9 +135,6 @@ corrplot(num_corr, tl.col = "red", bg = "White", tl.srt = 35,
 \end{figure}
 ```
 Les corrélations entre les variables numériques sont faibles dans la majorité des cas.
-
-
-
 
 
 

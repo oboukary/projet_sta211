@@ -1,0 +1,245 @@
+\documentclass[11pt,a4paper, x11names]{article}
+\input{include/preambule}
+\input{include/config}
+\begin{document}
+
+
+\input{include/page_de_garde}
+\begin{abstract}
+Dans le cadre de ce projet blabla blabla blabla
+\end{abstract}
+\section{Introduction}
+
+<<include=FALSE>>=
+knitr::knit_theme$set("edit-flashdevelop")
+knitr::opts_chunk$set(echo = FALSE, message  = FALSE)
+@
+<< message=FALSE, include=FALSE>>=
+#  Chargement des librairies
+# liste des packages nécessaires
+liste_des_packages <- c("readxl", "readr","tidyverse", "reshape","cowplot" ,"cramer","vcd", 
+                        "data.table", "DT","stringr","reshape2", "dplyr","gtsummary","plotly",
+                        "qwraps2","tidyverse", "reshape","cowplot" ,"cramer","vcd",
+                        "data.table", "DT","stringr","reshape2", "dplyr","gtsummary",
+                        "FactoMineR","factoextra","caret","ade4","pretty","hrbrthemes",
+                        "viridis", "forcats","faraway","corrplot","kableExtra","papeR",
+                        "qwraps2", "prettyR","webshot", "tidyquant","GGally", "gridExtra",
+                        "ggcorrplot","khroma", "patchwork","ggsci", "missMDA")
+#Installer les package s'ils ne sont pas encore installés
+instal <- liste_des_packages %in% installed.packages()
+install.packages(liste_des_packages[!instal],repos='http://cran.us.r-project.org')
+
+# Chargement des librairies
+lapply(liste_des_packages, require, character.only=TRUE)
+@
+
+
+\section{Chargement des données et analyses préliminaires}
+Cette partie est consacrée au chargement des données et à la sélection des variables 
+liées au ménage. Certaines variables qui sont codées comme des variables numériques mais qui en réalité sont qualitatives seront recordées en variables facteurs. 
+\subsection{Chargement des données}
+<< include=FALSE>>=
+donnees_brutes <- read.table(file = "Donnees_CNL.csv",
+                      header=TRUE, 
+                      sep=";"
+                      ,fileEncoding="latin1") 
+
+donnees<-donnees_brutes
+#----- Extraire la partie du nom des colonnes après le point ------------------
+names(donnees) <- sub(".*\\.", "", names(donnees))
+
+#------ Selection des variables en rapport avec le menage-----------------------
+data_menage <- donnees %>% 
+  select(Sexe, Diplome_Max, Type_Prof, Occupation, Source_ppale_Res, 
+         Structure_menage, Age, Revenus, TYPEMEN, Nb_Enfants_sup_10,
+         Nb_Enfants_inf_10) %>% 
+  mutate(Sexe             = as.factor(as.character(Sexe)),
+         Diplome_Max      = as.factor(as.character(Diplome_Max)),
+         Type_Prof        = as.factor(as.character(Type_Prof)),
+         Occupation       = as.factor(as.character(Occupation)),
+         Source_ppale_Res = as.factor(as.character(Source_ppale_Res)),
+         Structure_menage         = as.factor(as.character(Structure_menage))
+         ) 
+
+table(data_menage$TYPEMEN)
+num_cols <- unlist(lapply(data_menage, is.numeric)) 
+cat_col  <- unlist(lapply(data_menage, is.factor))
+num_data <- data_menage[, num_cols]
+cat_data <- data_menage[, cat_col]
+
+data_cat_plots <- cat_data %>% 
+  dplyr::mutate(if_else(Sexe=="1", "Homme", "Femme"),
+                Diplome_Max = case_when(Diplome_Max=="1" ~ "Sans diplôme",
+                                        Diplome_Max=="2" ~ "1er cycle général",
+                                        Diplome_Max=="3" ~ "2eme cycle général",
+                                        Diplome_Max=="4" ~ "Technique court",
+                                        Diplome_Max=="5" ~ "Technique long",
+                                        Diplome_Max=="6" ~ "Fin primaire",
+                                        Diplome_Max=="7" ~ "Bac + 2",
+                                        Diplome_Max=="8" ~ "Bac + 3/4",
+                                        Diplome_Max=="9" ~ "Bac + 5&+"),
+                Type_Prof = case_when(Type_Prof == "1" ~ "Agriculteur",
+                                      Type_Prof == "2" ~ "Artisans",
+                                      Type_Prof == "3" ~ "Cadre supérieur",
+                                      Type_Prof == "4" ~ "Profession intermédiaire",
+                                      Type_Prof == "5" ~ "Employé",
+                                      Type_Prof == "6" ~ "Ouvrier",
+                                      Type_Prof == "7" ~ "Autre"),
+                Occupation = case_when(Occupation == "1" ~ "Activité",
+                                       Occupation == "2" ~ "Chômeur",
+                                       Occupation == "3" ~ "Etudiant",
+                                       Occupation == "4" ~ "Retraité",
+                                       Occupation == "5" ~ "Au foyer",
+                                       Occupation == "6" ~ "Autre inactif"),
+            Source_ppale_Res = case_when(Source_ppale_Res == "1" ~ "Salaire & traitements",
+                                         Source_ppale_Res == "2" ~ "Revenus activite indépendante",
+                                         Source_ppale_Res == "3" ~ "Retraite",
+                                         Source_ppale_Res == "4" ~ "chômage / allocations sociales",
+                                         Source_ppale_Res == "5" ~ "Revenus actifs fonciers ou financiers"),
+          Structure_menage  = case_when(Structure_menage  == "1" ~  "Personne seule",
+                                        Structure_menage  == "2" ~  "Famille monoparentale",
+                                        Structure_menage  == "3" ~  "Couple",
+                                        Structure_menage  == "4" ~  "Autre ménage sans famille"),
+                Sexe            = case_when(Sexe              == "1" ~ "Homme",
+                                            Sexe              == "2" ~ "Femme"))
+@
+
+% Analyse univariée
+Après le chargement des données, l'étape suivante est l'analyse univariée. 
+On peut regarder les statistiques descriptives simples avec la function \textbf{summary} et la fonction \textbf{describe}.
+
+<< include=T>>=
+#-------------------------------------------------------------------------------
+#      Analyse univarié
+#-------------------------------------------------------------------------------
+summary(data_menage)
+data_menage %>% 
+  prettyR::describe(num.desc=c("mean","median","min","max","var","sd"))
+@
+
+%-------------------------------------------------------------------------------
+%  SECTION 1: Variables quantitatives
+%-------------------------------------------------------------------------------
+\subsection{Analyse descriptive des variables quantitatives }
+\subsubsection{Analyse univarié}
+
+\begin{table*}[!h] \centering
+%\ra{1.3}
+\begin{small}
+\begin{tabular}{@{}lrrrrrr@{}}\toprule
+\textbf{Variables}& \textbf{Moyenne} & \textbf{Médiane}& \textbf{Min} & \textbf{Maximum} & \textbf{Variance} & \textbf{Ecart-type} \\ \midrule
+\textbf{Age}          & 51.87 &  52 & 18 & 89 & 209.91 & 14.49\ \\ \hdashline
+\textbf{Revenus}      & 2~573.20 & 2~349 & 535&7~600 & 1~967~644.23&1~402.73   \\ \hdashline
+\textbf{Nombre d'enfants dont âge > 10 ans} &  0.44 & 0 & 0 & 3 & 0.67 & 0.82  \\  \hdashline
+\textbf{Nombre d'enfants dont âge <= 10 ans} &  0.32 & 0 & 0 & 3 & 0.48 & 0.70 \\  
+\bottomrule
+\end{tabular}
+\end{small}
+\caption{Statistiques descriptives des variables quantitatives}
+\end{table*}
+
+
+%-------------------------------------------------------------------------------
+%   SECTION 2: Variables qualitatives
+%-------------------------------------------------------------------------------
+
+\subsubsection{Analyse bivariée: Etudes des liaisons entre les différentes variables quantitatives}
+
+\begin{framed}
+<< echo=FALSE, message=FALSE>>=
+corr<-round(cor(num_data),2)
+cor_plot<- ggcorrplot::ggcorrplot(corr=corr,
+                                  hc.order = TRUE,
+                                  lab = TRUE,
+                                  lab_size = 3,
+                                  type = "lower",
+                                  legend.title = "Corrélation",
+                                  title = "Matrice des corrélations",
+                                  colors = c("red","white","green"),
+                                  ggtheme = theme_bw)
+cor_plot
+@
+\end{framed}
+
+<< message=FALSE, include=FALSE>>=
+# Tri à plat des variables qualitatives
+# données pour Visualisation
+# Sexe ménage
+
+make_tri_plat<-function(dataset, col_name){
+  vars <- enquo(col_name)
+  data <-dataset %>% 
+    select(!!vars)%>%
+          count(!!vars) %>% 
+          mutate(percent = round(100*(n/sum(n)),1), variable=as_label(vars),
+                 ypos = cumsum(percent)-0.8*percent) %>% 
+  rename(categorie = !!vars, effectifs=n)
+  
+  return(data)
+}
+datatp1<- make_tri_plat(data_cat_plots, Sexe)
+datatp2<- make_tri_plat(data_cat_plots, Diplome_Max)
+datatp3<- make_tri_plat(data_cat_plots, Type_Prof)
+datatp4<- make_tri_plat(data_cat_plots, Occupation)
+datatp5<- make_tri_plat(data_cat_plots, Source_ppale_Res)
+datatp6<- make_tri_plat(data_cat_plots, Structure_menage)
+
+
+
+long_dataframe <- rbind(datatp1, datatp2, datatp3, datatp4, datatp5, datatp6)
+@
+
+<<echo=FALSE, message=FALSE>>=
+pie_charts<-function(dataset){
+  p<-ggplot(dataset, aes(x="",y=percent, fill= categorie,label = scales::percent(percent/100))) +
+  geom_bar(stat = "identity",width=2) + 
+    coord_polar(theta="y") +
+      theme_void() + 
+  scale_fill_brewer(palette="Set1") +
+  scale_y_continuous(labels = function(x) paste0(x, "%")) +
+    geom_text( vjust= 7,
+               colour = "white", size = 6, aes(y = ypos, label = categorie)) +
+  theme(legend.title = element_blank(),
+       legend.position= "none") +
+ labs(x="", y= "") 
+
+return(p)
+}
+
+bar_plots<-function(dataset){
+  p<-ggplot(dataset, aes(categorie,percent, fill= categorie,label = scales::percent(percent/100))) +
+  geom_bar(stat = "identity") + 
+  scale_fill_manual(values = c("#0073C2FF", "#EFC000FF")) + 
+  scale_y_continuous(labels = function(x) paste0(x, "%")) +
+  facet_wrap(~variable, ncol=2, scale = "free") +
+  theme_tq() + 
+  scale_fill_tq() +
+  geom_text( position=position_dodge(width=0.5), vjust= 1,colour = "white",size = 2) +
+  theme(legend.title = element_blank(),
+       axis.text.x  = element_text( vjust=0.4),
+       legend.position= "none") +
+ labs(x="", y= "") +
+    coord_flip()
+
+return(p)
+}
+
+
+p7<-bar_plots(long_dataframe)
+@
+\begin{mdframed}[linecolor=blue]
+<<message=FALSE, echo=FALSE>>=
+p7
+@
+\end{mdframed}
+
+<<>>=
+acm<-FactoMineR::MCA(X= cat_data)
+plot(acm)
+@
+
+
+
+
+\end{document}
+
