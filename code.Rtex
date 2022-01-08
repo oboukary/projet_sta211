@@ -6,13 +6,13 @@
 
 \input{include/page_de_garde}
 \begin{abstract}
-Dans le cadre de ce projet blabla blabla blabla
+
 \end{abstract}
 \section{Introduction}
 
 <<include=FALSE>>=
 knitr::knit_theme$set("edit-flashdevelop")
-knitr::opts_chunk$set(echo = FALSE, message  = FALSE)
+knitr::opts_chunk$set(echo = FALSE, message  = FALSE, warning = FALSE)
 @
 << message=FALSE, include=FALSE>>=
 #  Chargement des librairies
@@ -24,7 +24,8 @@ liste_des_packages <- c("readxl", "readr","tidyverse", "reshape","cowplot" ,"cra
                         "FactoMineR","factoextra","caret","ade4","pretty","hrbrthemes",
                         "viridis", "forcats","faraway","corrplot","kableExtra","papeR",
                         "qwraps2", "prettyR","webshot", "tidyquant","GGally", "gridExtra",
-                        "ggcorrplot","khroma", "patchwork","ggsci", "missMDA")
+                        "ggcorrplot","khroma", "patchwork","ggsci", "missMDA", "mice", "VIM",
+                        "Amelia")
 #Installer les package s'ils ne sont pas encore installés
 instal <- liste_des_packages %in% installed.packages()
 install.packages(liste_des_packages[!instal],repos='http://cran.us.r-project.org')
@@ -36,7 +37,7 @@ lapply(liste_des_packages, require, character.only=TRUE)
 
 \section{Chargement des données et analyses préliminaires}
 Cette partie est consacrée au chargement des données et à la sélection des variables 
-liées au ménage. Certaines variables qui sont codées comme des variables numériques mais qui en réalité sont qualitatives seront recordées en variables facteurs. 
+liées au ménage. Certaines variables qui sont codées comme des variables numériques mais qui en réalité sont qualitatives seront recordées en variables facteurs.  
 \subsection{Chargement des données}
 << include=FALSE>>=
 donnees_brutes <- read.table(file = "Donnees_CNL.csv",
@@ -44,7 +45,15 @@ donnees_brutes <- read.table(file = "Donnees_CNL.csv",
                       sep=";"
                       ,fileEncoding="latin1") 
 
-donnees<-donnees_brutes
+donnees<-donnees_brutes 
+col_names<- names(donnees)
+cat_cols <- col_names[c(23:46, 80:116, 123:129)] # Numero des colonnes categorielles
+num_cols<-col_names[-c(23:46, 80:116, 123:129)] 
+donnees <- donnees %>% 
+  mutate_at(cat_cols, funs(as.character(.))) %>% 
+  mutate_at(cat_cols, funs(as.factor(.))) %>%
+  mutate_at(num_cols, funs(as.numeric(.)))
+
 #----- Extraire la partie du nom des colonnes après le point ------------------
 names(donnees) <- sub(".*\\.", "", names(donnees))
 
@@ -52,14 +61,7 @@ names(donnees) <- sub(".*\\.", "", names(donnees))
 data_menage <- donnees %>% 
   select(Sexe, Diplome_Max, Type_Prof, Occupation, Source_ppale_Res, 
          Structure_menage, Age, Revenus, TYPEMEN, Nb_Enfants_sup_10,
-         Nb_Enfants_inf_10) %>% 
-  mutate(Sexe             = as.factor(as.character(Sexe)),
-         Diplome_Max      = as.factor(as.character(Diplome_Max)),
-         Type_Prof        = as.factor(as.character(Type_Prof)),
-         Occupation       = as.factor(as.character(Occupation)),
-         Source_ppale_Res = as.factor(as.character(Source_ppale_Res)),
-         Structure_menage         = as.factor(as.character(Structure_menage))
-         ) 
+         Nb_Enfants_inf_10) 
 
 table(data_menage$TYPEMEN)
 num_cols <- unlist(lapply(data_menage, is.numeric)) 
@@ -68,7 +70,7 @@ num_data <- data_menage[, num_cols]
 cat_data <- data_menage[, cat_col]
 
 data_cat_plots <- cat_data %>% 
-  dplyr::mutate(if_else(Sexe=="1", "Homme", "Femme"),
+  dplyr::mutate(
                 Diplome_Max = case_when(Diplome_Max=="1" ~ "Sans diplôme",
                                         Diplome_Max=="2" ~ "1er cycle général",
                                         Diplome_Max=="3" ~ "2eme cycle général",
@@ -177,6 +179,7 @@ make_tri_plat<-function(dataset, col_name){
   
   return(data)
 }
+
 datatp1<- make_tri_plat(data_cat_plots, Sexe)
 datatp2<- make_tri_plat(data_cat_plots, Diplome_Max)
 datatp3<- make_tri_plat(data_cat_plots, Type_Prof)
@@ -238,7 +241,59 @@ acm<-FactoMineR::MCA(X= cat_data)
 plot(acm)
 @
 
+%  Khi2
+<<message=F, warning=FALSE>>=
+for( i in colnames(data_cat_plots)){
+  for(j in colnames(data_cat_plots)){
+    if(!(i==j)){
+    res<-chisq.test(data_cat_plots[, i], data_cat_plots[,j])
+    
+    print(paste0("----------------",i,"  CONTRE  ",j, "------------------"))
+    print(res)
+    }}}
+@
 
+
+%  v cramer
+<<message=F, warning=FALSE>>=
+for( i in colnames(data_cat_plots)){
+  for(j in colnames(data_cat_plots)){
+    if(!(i==j)){
+    res<- assocstats(table(data_cat_plots[, i], data_cat_plots[,j]))
+    
+    print(paste0("----------------",i,"  CONTRE  ",j, "------------------"))
+    print(res)
+    }}}
+@
+
+
+%-------------------------------------------------------------------------------
+% IMPUTATION DES VALEURS MANQUANTES 
+%-------------------------------------------------------------------------------
+<<>>=
+# Imputation avec mice
+agg<- aggr(donnees_brutes, col=c('navyblue','red'))
+imputed_Data <- mice(data = donnees, m=5, maxit = 5, method = 'pmm', seed = 500)
+completeData <- complete(imputed_Data,2)
+
+@
+
+<< acp>>=
+res.pca <- PCA(num_data)
+@
+
+\begin{figure}[H]
+\includegraphics[]{Images/graphVar.png}
+\end{figure}
+
+Les 2 premiers axes de l’ ACP  expriment 64.27\% de l’inertie totale du jeu de données ; cela signifie que 64.27\% de la variabilité totale du nuage est représentée dans ce plan. C’est un pourcentage assez important, et le premier plan représente donc convenablement la variabilité contenue dans une grande part du jeu de données constitué des variables numériques . Cette valeur est supérieure à la valeur référence de 52.76\%, la variabilité expliquée par ce plan est donc significative (cette intertie de référence est le quantile 0.95-quantile de la distribution des pourcentages d’inertie obtenue en simulant 2779 jeux de données aléatoires de dimensions comparables sur la base d’une distribution normale).
+
+Du fait de ces observations, il serait tout de même probablement préférable de considérer également dans l’analyse les dimensions supérieures ou égales à la troisième.
+<<>>=
+res.acm <- MCA(cat_data)
+plot(res.pca)
+plot(res.acm)
+@
 
 
 \end{document}
