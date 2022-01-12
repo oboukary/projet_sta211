@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.1.1)  8 JAN 2022 09:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.1.1)  12 JAN 2022 18:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -652,7 +652,7 @@ Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and footer
 \f@nch@O@olf=\skip151
 \f@nch@O@orf=\skip152
 ) (/home/boukary/.TinyTeX/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
-Package: tcolorbox 2021/12/20 version 5.0.1 text color boxes
+Package: tcolorbox 2022/01/07 version 5.0.2 text color boxes
 (/home/boukary/.TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/home/boukary/.TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/home/boukary/.TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks42
 \pgfutil@tempdima=\dimen281
@@ -1109,12 +1109,12 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \Verbatim@Outfile=\write5
 \Verbatim@Infile=\read5
 ) (/home/boukary/.TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
-Library (tcolorbox): 'tcbskins.code.tex' version '5.0.1'
+Library (tcolorbox): 'tcbskins.code.tex' version '5.0.2'
 \tcb@waterbox=\box99
 (/home/boukary/.TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
-Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '5.0.1'
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '5.0.2'
 )) (/home/boukary/.TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
-Library (tcolorbox): 'tcbbreakable.code.tex' version '5.0.1'
+Library (tcolorbox): 'tcbbreakable.code.tex' version '5.0.2'
 (/home/boukary/.TinyTeX/texmf-dist/tex/generic/oberdiek/pdfcol.sty
 Package: pdfcol 2019/12/29 v1.6 Handle new color stacks for pdfTeX (HO)
 )
@@ -1123,7 +1123,7 @@ Package pdfcol Info: New color stack `tcb@breakable' = 2 on input line 23.
 \tcb@totalupperbox=\box101
 \tcb@totallowerbox=\box102
 ) (/home/boukary/.TinyTeX/texmf-dist/tex/latex/tcolorbox/tcbxparse.code.tex
-Library (tcolorbox): 'tcbxparse.code.tex' version '5.0.1'
+Library (tcolorbox): 'tcbxparse.code.tex' version '5.0.2'
 ) (/home/boukary/.TinyTeX/texmf-dist/tex/latex/shadowtext/shadowtext.sty
 Package: shadowtext 2012/05/07 v0.3 Shadow Text
 \st@shadowoffsetx=\skip155
@@ -1402,7 +1402,7 @@ LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
 (Font)              scaled to size 5.76004pt on input line 9.
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
 (Font)              scaled to size 11.52008pt on input line 22.
-<Images/logocnam.png, id=33, 301.125pt x 100.375pt>
+<Images/logocnam.png, id=29, 301.125pt x 100.375pt>
 File: Images/logocnam.png Graphic file (type png)
 <use Images/logocnam.png>
 Package pdftex.def Info: Images/logocnam.png  used on input line 23.
@@ -1445,523 +1445,190 @@ LaTeX Font Info:    Font shape `T1/pzc/m/n' in size <19.91684> not available
 
 {/home/boukary/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./Images/logocnam.png>])
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 70.
+(Font)              scaled to size 9.60007pt on input line 68.
 LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
-(Font)              scaled to size 9.60007pt on input line 70.
+(Font)              scaled to size 9.60007pt on input line 68.
 LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
-(Font)              scaled to size 13.82408pt on input line 73.
+(Font)              scaled to size 13.82408pt on input line 70.
 LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
-(Font)              scaled to size 13.82408pt on input line 73.
+(Font)              scaled to size 13.82408pt on input line 70.
 LaTeX Font Info:    Font shape `T1/cmtt/m/n' will be
-(Font)              scaled to size 11.73846pt on input line 91.
-
-Overfull \hbox (7.6326pt too wide) in paragraph at lines 92--92
-[]\T1/cmtt/m/n/10.95 ##  Sexe      Diplome_Max  Type_Prof Occupation Source_ppale_Res Structure_menage 
- []
-
+(Font)              scaled to size 11.73846pt on input line 102.
+<figure/Analyse_factorielle-1.pdf, id=44, 505.89pt x 505.89pt>
+File: figure/Analyse_factorielle-1.pdf Graphic file (type pdf)
+<use figure/Analyse_factorielle-1.pdf>
+Package pdftex.def Info: figure/Analyse_factorielle-1.pdf  used on input line 119.
+(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.154 \end{kframe}
-                   [1]
-Underfull \vbox (badness 10000) detected at line 154
+l.121 \includegraphics
+                      [width=\maxwidth]{figure/Analyse_factorielle-2} [1]
+<figure/Analyse_factorielle-2.pdf, id=49, 505.89pt x 505.89pt>
+File: figure/Analyse_factorielle-2.pdf Graphic file (type pdf)
+<use figure/Analyse_factorielle-2.pdf>
+Package pdftex.def Info: figure/Analyse_factorielle-2.pdf  used on input line 121.
+(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
+[2 <./figure/Analyse_factorielle-1.pdf>]
+Overfull \hbox (13.6984pt too wide) in paragraph at lines 159--159
+[]\T1/cmtt/m/n/10.95 ##                      Dim.1    ctr   cos2    Dim.2    ctr   cos2    Dim.3    ctr[] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 154
+Overfull \hbox (13.6984pt too wide) in paragraph at lines 160--160
+[]\T1/cmtt/m/n/10.95 ## Age               | -0.496 10.754  0.246 |  0.599 33.685  0.359 |  0.451 22.772[] 
  []
 
-[2]
-LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 166.
-LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 166.
-LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 166.
-LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 9.60007pt on input line 166.
-LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 6.72005pt on input line 166.
-LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
-(Font)              scaled to size 4.80003pt on input line 166.
-LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 166.
-LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 166.
-LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 166.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 166.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 166.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 166.
-LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 166.
-LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 166.
-LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 166.
-LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 166.
-LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 166.
-LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 166.
-LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 166.
-LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 166.
-LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
-(Font)              scaled to size 4.80003pt on input line 166.
 
-Overfull \hbox (1.4413pt too wide) in paragraph at lines 166--175
+Overfull \hbox (13.6984pt too wide) in paragraph at lines 161--161
+[]\T1/cmtt/m/n/10.95 ## Revenus           |  0.216  2.039  0.047 |  0.728 49.795  0.530 | -0.648 47.045[] 
+ []
+
+
+Overfull \hbox (13.6984pt too wide) in paragraph at lines 162--162
+[]\T1/cmtt/m/n/10.95 ## Nb_Person         |  0.928 37.632  0.861 |  0.132  1.645  0.018 |  0.148  2.451[] 
+ []
+
+
+Overfull \hbox (13.6984pt too wide) in paragraph at lines 163--163
+[]\T1/cmtt/m/n/10.95 ## Nb_Enfants_inf_10 |  0.764 25.540  0.584 | -0.265  6.617  0.070 | -0.161  2.892[] 
+ []
+
+
+Overfull \hbox (13.6984pt too wide) in paragraph at lines 164--164
+[]\T1/cmtt/m/n/10.95 ## Nb_Enfants_sup_10 |  0.742 24.034  0.550 |  0.297  8.257  0.088 |  0.471 24.840[] 
+ []
+
+[3 <./figure/Analyse_factorielle-2.pdf>]
+Underfull \vbox (badness 10000) detected at line 172
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 172
+ []
+
+[4]
+<figure/Analyse_factorielle-3.pdf, id=74, 505.89pt x 505.89pt>
+File: figure/Analyse_factorielle-3.pdf Graphic file (type pdf)
+<use figure/Analyse_factorielle-3.pdf>
+Package pdftex.def Info: figure/Analyse_factorielle-3.pdf  used on input line 173.
+(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
+<figure/Analyse_factorielle-4.pdf, id=75, 505.89pt x 505.89pt>
+File: figure/Analyse_factorielle-4.pdf Graphic file (type pdf)
+<use figure/Analyse_factorielle-4.pdf>
+Package pdftex.def Info: figure/Analyse_factorielle-4.pdf  used on input line 175.
+(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
+[5 <./figure/Analyse_factorielle-3.pdf>]
+LaTeX Font Info:    Font shape `T1/cmtt/b/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/bx/n' tried instead on input line 264.
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 264.
+LaTeX Font Info:    Font shape `T1/cmtt/m/n' will be
+(Font)              scaled to size 11.73846pt on input line 264.
+
+Overfull \hbox (13.6984pt too wide) in paragraph at lines 264--264
+[]\T1/cmtt/m/n/10.95 ## Error in MFA(data_menage, group = c(5, 6), type = c(rep("s", 1), rep("n", : not
+ []
+
+[6 <./figure/Analyse_factorielle-4.pdf>]
+Underfull \vbox (badness 10000) detected at line 264
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 264
+ []
+
+[7]
+Underfull \vbox (badness 10000) detected at line 264
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 264
+ []
+
+[8]
+<figure/Analyse_factorielle-5.pdf, id=105, 505.89pt x 505.89pt>
+File: figure/Analyse_factorielle-5.pdf Graphic file (type pdf)
+<use figure/Analyse_factorielle-5.pdf>
+Package pdftex.def Info: figure/Analyse_factorielle-5.pdf  used on input line 265.
+(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 280.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 280.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 280.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 9.60007pt on input line 280.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 6.72005pt on input line 280.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 4.80003pt on input line 280.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 280.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 280.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 280.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 280.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 280.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 280.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 280.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 280.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 280.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 280.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 280.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 280.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 280.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 6.72005pt on input line 280.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 280.
+
+Overfull \hbox (1.4413pt too wide) in paragraph at lines 280--289
  [][] 
  []
 
 LaTeX Font Info:    Font shape `T1/mdbch/m/fsc' will be
-(Font)              scaled to size 10.51207pt on input line 175.
-<figure/unnamed-chunk-5-1.pdf, id=56, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-5-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-5-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-5-1.pdf  used on input line 188.
-(pdftex.def)             Requested size: 464.89688pt x 464.90724pt.
+(Font)              scaled to size 10.51207pt on input line 289.
 
-Underfull \vbox (badness 10000) detected at line 190
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 195.
-<figure/unnamed-chunk-8-1.pdf, id=63, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-8-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-8-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-8-1.pdf  used on input line 198.
-(pdftex.def)             Requested size: 462.89688pt x 462.90796pt.
-Package mdframed Info: You first box width is to small
- mdframed fixed it
-(mdframed)              on input line 200.
-[4 <./figure/unnamed-chunk-5-1.pdf>]
-<figure/unnamed-chunk-9-1.pdf, id=74, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-9-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-9-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-9-1.pdf  used on input line 204.
-(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
-[5 <./figure/unnamed-chunk-8-1.pdf>]
-<figure/unnamed-chunk-9-2.pdf, id=84, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-9-2.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-9-2.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-9-2.pdf  used on input line 206.
-(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
-[6 <./figure/unnamed-chunk-9-1.pdf>]
-<figure/unnamed-chunk-9-3.pdf, id=96, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-9-3.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-9-3.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-9-3.pdf  used on input line 208.
-(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
-[7 <./figure/unnamed-chunk-9-2.pdf>]
-<figure/unnamed-chunk-9-4.pdf, id=107, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-9-4.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-9-4.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-9-4.pdf  used on input line 210.
-(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
-[8 <./figure/unnamed-chunk-9-3.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 219.
-(/home/boukary/.TinyTeX/texmf-dist/tex/latex/base/ts1cmtt.fd
-File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-Overfull \hbox (1.5668pt too wide) in paragraph at lines 280--280
-[]\T1/cmtt/m/n/10.95 ## [1] "----------------Diplome_Max  CONTRE  Source_ppale_Res------------------"[] 
- []
 
+Package caption Warning: Unused \captionsetup[figure] on input line 13.
+See the caption package documentation for explanation.
 
-Overfull \hbox (1.5668pt too wide) in paragraph at lines 287--287
-[]\T1/cmtt/m/n/10.95 ## [1] "----------------Diplome_Max  CONTRE  Structure_menage------------------"[] 
- []
-
-
-Overfull \hbox (1.5668pt too wide) in paragraph at lines 392--392
-[]\T1/cmtt/m/n/10.95 ## [1] "----------------Source_ppale_Res  CONTRE  Diplome_Max------------------"[] 
- []
-
-
-Overfull \hbox (31.89578pt too wide) in paragraph at lines 413--413
-[]\T1/cmtt/m/n/10.95 ## [1] "----------------Source_ppale_Res  CONTRE  Structure_menage------------------"[] 
- []
-
-
-Overfull \hbox (1.5668pt too wide) in paragraph at lines 434--434
-[]\T1/cmtt/m/n/10.95 ## [1] "----------------Structure_menage  CONTRE  Diplome_Max------------------"[] 
- []
-
-
-Overfull \hbox (31.89578pt too wide) in paragraph at lines 455--455
-[]\T1/cmtt/m/n/10.95 ## [1] "----------------Structure_menage  CONTRE  Source_ppale_Res------------------"[] 
- []
-
-[9 <./figure/unnamed-chunk-9-4.pdf>]
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-[10]
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-[11]
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-[12]
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-[13]
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-[14]
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-[15]
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-[16]
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-
-Underfull \vbox (badness 10000) detected at line 511
- []
-
-[17]
-Overfull \hbox (1.5668pt too wide) in paragraph at lines 591--591
-[]\T1/cmtt/m/n/10.95 ## [1] "----------------Diplome_Max  CONTRE  Source_ppale_Res------------------"[] 
- []
-
-
-Overfull \hbox (1.5668pt too wide) in paragraph at lines 599--599
-[]\T1/cmtt/m/n/10.95 ## [1] "----------------Diplome_Max  CONTRE  Structure_menage------------------"[] 
- []
-
-
-Overfull \hbox (1.5668pt too wide) in paragraph at lines 719--719
-[]\T1/cmtt/m/n/10.95 ## [1] "----------------Source_ppale_Res  CONTRE  Diplome_Max------------------"[] 
- []
-
-
-Overfull \hbox (31.89578pt too wide) in paragraph at lines 743--743
-[]\T1/cmtt/m/n/10.95 ## [1] "----------------Source_ppale_Res  CONTRE  Structure_menage------------------"[] 
- []
-
-
-Overfull \hbox (1.5668pt too wide) in paragraph at lines 767--767
-[]\T1/cmtt/m/n/10.95 ## [1] "----------------Structure_menage  CONTRE  Diplome_Max------------------"[] 
- []
-
-
-Overfull \hbox (31.89578pt too wide) in paragraph at lines 791--791
-[]\T1/cmtt/m/n/10.95 ## [1] "----------------Structure_menage  CONTRE  Source_ppale_Res------------------"[] 
- []
-
-[18]
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-[19]
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-[20]
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-[21]
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-[22]
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-[23]
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-[24]
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-[25]
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-
-Underfull \vbox (badness 10000) detected at line 856
- []
-
-[26]
-<figure/unnamed-chunk-12-1.pdf, id=201, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-12-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-12-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-12-1.pdf  used on input line 865.
-(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
-[27]
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 869--869
-[]\T1/cmtt/m/n/10.95 ##   1   1  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 870--870
-[]\T1/cmtt/m/n/10.95 ##   1   2  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 871--871
-[]\T1/cmtt/m/n/10.95 ##   1   3  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 872--872
-[]\T1/cmtt/m/n/10.95 ##   1   4  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 873--873
-[]\T1/cmtt/m/n/10.95 ##   1   5  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 874--874
-[]\T1/cmtt/m/n/10.95 ##   2   1  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 875--875
-[]\T1/cmtt/m/n/10.95 ##   2   2  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 876--876
-[]\T1/cmtt/m/n/10.95 ##   2   3  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 877--877
-[]\T1/cmtt/m/n/10.95 ##   2   4  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 878--878
-[]\T1/cmtt/m/n/10.95 ##   2   5  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 879--879
-[]\T1/cmtt/m/n/10.95 ##   3   1  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 880--880
-[]\T1/cmtt/m/n/10.95 ##   3   2  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 881--881
-[]\T1/cmtt/m/n/10.95 ##   3   3  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 882--882
-[]\T1/cmtt/m/n/10.95 ##   3   4  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 883--883
-[]\T1/cmtt/m/n/10.95 ##   3   5  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 884--884
-[]\T1/cmtt/m/n/10.95 ##   4   1  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 885--885
-[]\T1/cmtt/m/n/10.95 ##   4   2  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 886--886
-[]\T1/cmtt/m/n/10.95 ##   4   3  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 887--887
-[]\T1/cmtt/m/n/10.95 ##   4   4  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 888--888
-[]\T1/cmtt/m/n/10.95 ##   4   5  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 889--889
-[]\T1/cmtt/m/n/10.95 ##   5   1  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 890--890
-[]\T1/cmtt/m/n/10.95 ##   5   2  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 891--891
-[]\T1/cmtt/m/n/10.95 ##   5   3  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 892--892
-[]\T1/cmtt/m/n/10.95 ##   5   4  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-
-Overfull \hbox (1378.50247pt too wide) in paragraph at lines 893--893
-[]\T1/cmtt/m/n/10.95 ##   5   5  LVLb  ICOS1  ICOS2  ICOS3  ICOS4  ICOS5  QPE1b  QPE2b  QPD1b  QPD2b  QPP1b  QPP2b  QME1b  QME2b  QME3b  CUI1b  CUI2b  CUI3b  CUI4b  CUI5b  ACTIVITE*  TMM1e1  TMM2e1  TMM3e1  TMMB1e1  TMMB2e1  TMMB3e1  TRM0e1  TRM1e1  TRM5e1  TRM7e1  TRP0e1  TRP1e1  TRP3e1  TRS1e1  TRS2e1  TRS3e1  TRS4e1  TRS5e1[] 
- []
-
-[28 <./figure/unnamed-chunk-12-1.pdf>]
-<figure/acp-1.pdf, id=215, 505.89pt x 505.89pt>
-File: figure/acp-1.pdf Graphic file (type pdf)
-<use figure/acp-1.pdf>
-Package pdftex.def Info: figure/acp-1.pdf  used on input line 900.
-(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
-[29]
-<figure/acp-2.pdf, id=220, 505.89pt x 505.89pt>
-File: figure/acp-2.pdf Graphic file (type pdf)
-<use figure/acp-2.pdf>
-Package pdftex.def Info: figure/acp-2.pdf  used on input line 902.
-(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
-<Images/graphVar.png, id=221, 313.17pt x 243.0681pt>
-File: Images/graphVar.png Graphic file (type png)
-<use Images/graphVar.png>
-Package pdftex.def Info: Images/graphVar.png  used on input line 906.
-(pdftex.def)             Requested size: 313.16922pt x 243.0675pt.
-[30 <./figure/acp-1.pdf>] [31 <./figure/acp-2.pdf>]
-<figure/unnamed-chunk-13-1.pdf, id=243, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-13-1.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-13-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-13-1.pdf  used on input line 914.
-(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
-
-Overfull \hbox (274.71257pt too wide) in paragraph at lines 911--915
-\T1/mdbch/m/n/10.95 l'ana-lyse les di-men-sions su-pé-rieures ou égales à la troi-sième.  [][] 
- []
-
-[32 <./Images/graphVar.png>]
-<figure/unnamed-chunk-13-2.pdf, id=250, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-13-2.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-13-2.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-13-2.pdf  used on input line 916.
-(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
-[33 <./figure/unnamed-chunk-13-1.pdf>]
-<figure/unnamed-chunk-13-3.pdf, id=261, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-13-3.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-13-3.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-13-3.pdf  used on input line 918.
-(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
-[34 <./figure/unnamed-chunk-13-2.pdf>]
-<figure/unnamed-chunk-13-4.pdf, id=272, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-13-4.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-13-4.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-13-4.pdf  used on input line 920.
-(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
-[35 <./figure/unnamed-chunk-13-3.pdf>]
-<figure/unnamed-chunk-13-5.pdf, id=283, 505.89pt x 505.89pt>
-File: figure/unnamed-chunk-13-5.pdf Graphic file (type pdf)
-<use figure/unnamed-chunk-13-5.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-13-5.pdf  used on input line 922.
-(pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
 
 Package caption Warning: Unused \captionsetup[algorithm] on input line 15.
 See the caption package documentation for explanation.
 
-[36 <./figure/unnamed-chunk-13-4.pdf>] [37 <./figure/unnamed-chunk-13-5.pdf>] (./code.aux)
+[9 <./figure/Analyse_factorielle-5.pdf>] [10] (./code.aux)
 Package rerunfilecheck Info: File `code.out' has not changed.
-(rerunfilecheck)             Checksum: CABE10DDFDC32744BDD94EFB255A47F6;1563.
+(rerunfilecheck)             Checksum: 4E6571E087FAD4EE6ECFE97932D5048C;1048.
  ) 
 Here is how much of TeX's memory you used:
- 46590 strings out of 480293
- 1048484 string characters out of 5896317
- 1515234 words of memory out of 5000000
- 63560 multiletter control sequences out of 15000+600000
- 469661 words of font info for 147 fonts, out of 8000000 for 9000
+ 46452 strings out of 480293
+ 1045115 string characters out of 5896317
+ 1482234 words of memory out of 5000000
+ 63465 multiletter control sequences out of 15000+600000
+ 469363 words of font info for 146 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 88i,12n,83p,818b,1074s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/boukary/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1095.600pk> </home/boukary/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.643pk>{/home/boukary/.TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{/home/boukary/.TinyTeX/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</home/boukary/.TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb8t.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7t.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7y.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chri7m.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
-Output written on code.pdf (38 pages, 749845 bytes).
+ 88i,12n,83p,796b,1074s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/boukary/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.643pk>{/home/boukary/.TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}{/home/boukary/.TinyTeX/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}</home/boukary/.TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb8t.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7t.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7y.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chri7m.pfb></home/boukary/.TinyTeX/texmf-dist/fonts/type1/urw/zapfchan/uzcmi8a.pfb>
+Output written on code.pdf (11 pages, 300647 bytes).
 PDF statistics:
- 439 PDF objects out of 1000 (max. 8388607)
- 273 compressed objects within 3 object streams
- 46 named destinations out of 1000 (max. 500000)
- 147 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 233 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
+ 17 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 
