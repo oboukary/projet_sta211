@@ -2,7 +2,7 @@
 #  ACP, ACM, AFM SUR LES DONNEES MENAGES                                 #
 #------------------------------------------------------------------------#
 # ACP sur les variables quantitatives du bloc ménage
-res.pca_menage<-PCA(quanti_meange)
+res.pca_menage<-PCA(quanti_menage)
 summary(res.pca_menage)
 resume(res.pca_menage)
 # ACM sur les variables qualitatives du bloc ménage

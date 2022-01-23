@@ -3,6 +3,7 @@
 \input{include/config}
 \begin{document}
 \input{include/page_de_garde}
+\tableofcontents
 \begin{abstract}
 \end{abstract}
 \section{Introduction}

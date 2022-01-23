@@ -10,7 +10,6 @@ res.km <-kmeans(res.daisy, centers=nbclusters)
 cluster.ind<- res.km$cluster
 
 data_cluster<- as.data.frame(cbind(data_afm, cluster.ind))
-
 #------------------- Visualisation des clusters --------------------------------
 fviz_cluster(res.km, data = dh,
              geom = "point",
@@ -24,10 +23,11 @@ k.max <- 10
 wss <- sapply(1:k.max, 
               function(k){kmeans(dh, k, nstart=50,iter.max = 15 )$tot.withinss})
 wss
-plot(1:k.max, wss,
+P<-plot(1:k.max, wss,
      type="b", pch = 19, frame = FALSE, 
      xlab="Number of clusters K",
      ylab="Total within-clusters sum of squares")
+
 
 
 

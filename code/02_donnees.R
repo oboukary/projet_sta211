@@ -42,7 +42,7 @@ data_menage <- donnees %>%
   dplyr::select(-c("TYPEMEN"))
 quali_menage <- data_menage %>%    # données variables qualitatives ménage
   dplyr::select_if(~is.factor(.))
-quanti_meange <- data_menage %>% 
+quanti_menage <- data_menage %>% 
   dplyr::select_if(~is.numeric(.)) # données variables quantitatives ménage
 #-------------------------------------------------------------------------------
 data_afm<- donnees %>% 

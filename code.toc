@@ -1,0 +1,15 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Chargement des données et analyses préliminaires}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Chargement des données}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Analyse descriptive des variables quantitatives }{2}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Analyse univarié}{2}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}ACP sur les variables quantitatives du bloc ménage}{2}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}ACM sur les variables qualitatives du bloc ménage}{3}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}AFM sur les variable du bloc ménage}{3}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}ACP sur les variables quantitatives du bloc ménage}{4}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}ACM sur les variables qualitatives du bloc ménage}{4}{subsubsection.2.2.6}%
+\contentsline {subsubsection}{\numberline {2.2.7}AFM sur les variable du bloc ménage}{5}{subsubsection.2.2.7}%
+\contentsline {subsubsection}{\numberline {2.2.8}ACP sur les variables quantitatives du bloc ménage}{5}{subsubsection.2.2.8}%
+\contentsline {subsubsection}{\numberline {2.2.9}ACM sur les variables qualitatives du bloc ménage}{6}{subsubsection.2.2.9}%
+\contentsline {subsubsection}{\numberline {2.2.10}AFM sur les variable du bloc habitude}{7}{subsubsection.2.2.10}%
