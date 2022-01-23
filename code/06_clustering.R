@@ -1,7 +1,7 @@
 #------------ Classification hierarchique ascendante ----------------#
-res.daisy<-daisy(data_afm, metric="gower")      # 
-res.hc<-hclust(res.daisy, method  = "ward.D2")  #
-plot(res.hc, labels=FALSE)                      #
+res.daisy<-daisy(data_afm, metric="gower")       # 
+res.hc<-hclust(res.daisy, method  = "ward.D2")   #
+plot(res.hc, labels=FALSE)                       #
 nbclusters <- 4
 rect.hclust(res.hc, k=nbclusters, border="red")  #
 set.seed(123)
@@ -9,10 +9,10 @@ set.seed(123)
 res.km <-kmeans(res.daisy, centers=nbclusters)
 cluster.ind<- res.km$cluster
 
-data_clust<- as.data.frame(cbind(data_afm, cluster.ind))
+data_cluster<- as.data.frame(cbind(data_afm, cluster.ind))
 
 #------------------- Visualisation des clusters --------------------------------
-fviz_cluster(mixedClusters, data = dh,
+fviz_cluster(res.km, data = dh,
              geom = "point",
              ellipse.type = "convex", 
              ggtheme = theme_bw()
