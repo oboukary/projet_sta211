@@ -12,9 +12,11 @@
 %--------------------------------------------------------------------------------------------------
 <<include=FALSE>>=
 knitr::knit_theme$set("edit-flashdevelop")
-knitr::opts_chunk$set(echo     = FALSE, 
-                      message  = FALSE, 
-                      warning  = FALSE)
+knitr::opts_chunk$set(echo       = FALSE, 
+                      message    = FALSE, 
+                      warning    = FALSE, 
+                      fig.width  =  6,
+                      fig.height = 3.5)
 @
 
 %--------------------------------------------------------------------------------------------------
@@ -52,19 +54,6 @@ source(file = "code/03_analyse_univariee.R")
 %--------------------------------------------------------------------------------------------------
 %                         04- ANALYSE BIVARIEE
 %----------------------------------------------------------------------------
-
-
-
-%--------------------------------------------------------------------------------------------------
-%                         05- ANALYSE FACTORIELLE
-%--------------------------------------------------------------------------------------------------
-<<Analyse factorielle>>=
-source(file = "code/05_analyse_factorielle.R")
-@
-
-
-
-
 %-------------------------------------------------------------------------------
 %  SECTION 1: Variables quantitatives
 %-------------------------------------------------------------------------------
@@ -79,12 +68,267 @@ source(file = "code/05_analyse_factorielle.R")
 \textbf{Age}          & 51.87 &  52 & 18 & 89 & 209.91 & 14.49\ \\ \hdashline
 \textbf{Revenus}      & 2~573.20 & 2~349 & 535&7~600 & 1~967~644.23&1~402.73   \\ \hdashline
 \textbf{Nombre d'enfants dont âge > 10 ans} &  0.44 & 0 & 0 & 3 & 0.67 & 0.82  \\  \hdashline
-\textbf{Nombre d'enfants dont âge <= 10 ans} &  0.32 & 0 & 0 & 3 & 0.48 & 0.70 \\  
+\textbf{Nombre d'enfants dont âge <= 10 ans} &  0.32 & 0 & 0 & 3 & 0.48 & 0.70 \\
 \bottomrule
 \end{tabular}
 \end{small}
 \caption{Statistiques descriptives des variables quantitatives}
 \end{table*}
+
+
+
+%--------------------------------------------------------------------------------------------------
+%                         05- ANALYSE FACTORIELLE
+%--------------------------------------------------------------------------------------------------
+<<Analyse factorielle, include=FALSE>>=
+source(file = "code/05_analyse_factorielle.R")
+@
+
+\par Etant donné la structure en groupe des données, nous allons réaliser des analyses factorielles sur
+chaque groupe de variables. Pour le bloc chaque bloc(ménage, habitude, logement), nous réalisons des \textbf{ACP} sur les variables quantitatives, une \textbf{ACM} sur les variables qualitatives et une \textbf{AFM} sur chaque bloc. L'objectif est de voir s'il existe une différence entre individus par rapport à chaque groupe de variable ou s'il existe des groupes d'individus homogènes par rapport à chaque groupe ou chaque bloc de variables.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  MENAGE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{ACP sur les variables quantitatives du bloc ménage}
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+    fviz_pca_var(res.pca_menage, col.var = "cos2",
+                 gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+                 repel = TRUE # Évite le chevauchement de texte
+    )
+@
+\end{mdframed}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_pca_biplot(res.pca_menage, repel = TRUE,
+                    col.var = "#2E9FDF", # Couleur des variables
+                    col.ind = "#696969"  # Couleur des individues
+                )
+@
+\end{mdframed}
+\end{minipage}
+
+D'après les résultats de l'ACP sur les variables quantitatives du bloc ménage,
+les deux premières dimensions portent 61.7 de la variabilité contenu dans ce groupe de variables. Cela répresente un part significative. Les variables \textbf{NBPerson},\textbf{NBEnftssup0} et \textbf{NBEnftsinf10} sont fortement corrélés au premier axe factoriel de l'ACP. A l'opposé, les variables  \textbf{Age} et \textbf{Revenus} sont fortement corrélées au deuxième axe factoriel de l'ACP. Les individus(ménages) qui ont de fortes coordonnées sur l'axe 2 sont des ménages relativement aisés et âgés. Ceux qui ont de fortes coordonnées sur l'axe 1 sont des ménages composés de beaucoup de personnes et avec des enfants.
+
+\subsubsection{ACM sur les variables qualitatives du bloc ménage}
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+   fviz_eig(res.mca_menage, addlabels = TRUE, ylim = c (0, 45),)
+@
+\end{mdframed}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_mca_biplot(res.mca_menage, repel = TRUE,
+                    ggtheme = theme_minimal(),
+                addEllipses = TRUE
+                )
+@
+\end{mdframed}
+\end{minipage}
+\vfill
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_contrib (res.mca_menage, choice = "var", axes = 1, top = 15)
+# Contributions des variables à la dimension 2
+fviz_contrib (res.mca_menage, choice = "var", axes = 2, top = 15)
+@
+\end{mdframed}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_mca_var(res.mca_menage, col.var = "cos2",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), 
+             repel = TRUE, 
+             ggtheme = theme_minimal())
+@
+\end{mdframed}
+\end{minipage}
+
+\subsubsection{AFM sur les variable du bloc ménage}
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_mfa_var(res.mfa_menage, "group")
+@
+
+\end{mdframed}
+\end{minipage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  LOGEMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{ACP sur les variables quantitatives du bloc ménage}
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+    fviz_pca_var(res.pca_logement, col.var = "cos2",
+                 gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+                 repel = TRUE # Évite le chevauchement de texte
+    )
+@
+\end{mdframed}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_pca_biplot(res.pca_logement, repel = TRUE,
+                    col.var = "#2E9FDF", # Couleur des variables
+                    col.ind = "#696969"  # Couleur des individues
+                )
+@
+\end{mdframed}
+\end{minipage}
+
+D'après les résultats de l'ACP sur les variables quantitatives du bloc ménage,
+les deux premières dimensions portent 61.7 de la variabilité contenu dans ce groupe de variables. Cela répresente un part significative. Les variables \textbf{NBPerson},\textbf{NBEnftssup0} et \textbf{NBEnftsinf10} sont fortement corrélés au premier axe factoriel de l'ACP. A l'opposé, les variables  \textbf{Age} et \textbf{Revenus} sont fortement corrélées au deuxième axe factoriel de l'ACP. Les individus(ménages) qui ont de fortes coordonnées sur l'axe 2 sont des ménages relativement aisés et âgés. Ceux qui ont de fortes coordonnées sur l'axe 1 sont des ménages composés de beaucoup de personnes et avec des enfants.
+
+\subsubsection{ACM sur les variables qualitatives du bloc ménage}
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+   fviz_eig(res.mca_logement, addlabels = TRUE, ylim = c (0, 45),)
+@
+\end{mdframed}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_mca_biplot(res.mca_logement, repel = TRUE,
+                    ggtheme = theme_minimal(),
+                addEllipses = TRUE
+                )
+@
+\end{mdframed}
+\end{minipage}
+\vfill
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_contrib (res.mca_logement, choice = "var", axes = 1, top = 15)
+# Contributions des variables à la dimension 2
+fviz_contrib (res.mca_logement, choice = "var", axes = 2, top = 15)
+@
+\end{mdframed}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_mca_var(res.mca_logement, col.var = "cos2",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), 
+             repel = TRUE, 
+             ggtheme = theme_minimal())
+@
+\end{mdframed}
+\end{minipage}
+
+\subsubsection{AFM sur les variable du bloc ménage}
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_mfa_var(res.mfa_logement, "group")
+@
+
+\end{mdframed}
+\end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   HABITUDE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{ACP sur les variables quantitatives du bloc ménage}
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+    fviz_pca_var(res.pca_habitude, col.var = "cos2",
+                 gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+                 repel = TRUE # Évite le chevauchement de texte
+    )
+@
+\end{mdframed}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_pca_biplot(res.pca_habitude, repel = TRUE,
+                    col.var = "#2E9FDF", # Couleur des variables
+                    col.ind = "#696969"  # Couleur des individues
+                )
+@
+\end{mdframed}
+\end{minipage}
+
+D'après les résultats de l'ACP sur les variables quantitatives du bloc ménage,
+les deux premières dimensions portent 61.7 de la variabilité contenu dans ce groupe de variables. Cela répresente un part significative. Les variables \textbf{NBPerson},\textbf{NBEnftssup0} et \textbf{NBEnftsinf10} sont fortement corrélés au premier axe factoriel de l'ACP. A l'opposé, les variables  \textbf{Age} et \textbf{Revenus} sont fortement corrélées au deuxième axe factoriel de l'ACP. Les individus(ménages) qui ont de fortes coordonnées sur l'axe 2 sont des ménages relativement aisés et âgés. Ceux qui ont de fortes coordonnées sur l'axe 1 sont des ménages composés de beaucoup de personnes et avec des enfants.
+
+\subsubsection{ACM sur les variables qualitatives du bloc ménage}
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+   fviz_eig(res.mca_habitude, addlabels = TRUE, ylim = c (0, 45),)
+@
+\end{mdframed}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_mca_biplot(res.mca_habitude, repel = TRUE,
+                    ggtheme = theme_minimal(),
+                addEllipses = TRUE
+                )
+@
+\end{mdframed}
+\end{minipage}
+\vfill
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_contrib (res.mca_habitude, choice = "var", axes = 1, top = 15)
+# Contributions des variables à la dimension 2
+fviz_contrib (res.mca_habitude, choice = "var", axes = 2, top = 15)
+@
+\end{mdframed}
+\end{minipage}
+\hfill
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_mca_var(res.mca_habitude, col.var = "cos2",
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"), 
+             repel = TRUE, 
+             ggtheme = theme_minimal())
+@
+\end{mdframed}
+\end{minipage}
+
+\subsubsection{AFM sur les variable du bloc habitude}
+\begin{minipage}{0.49\linewidth}
+\begin{mdframed}
+<<echo=FALSE>>=
+fviz_mfa_var(res.mfa_logement, "group")
+@
+
+\end{mdframed}
+\end{minipage}
 
 
 %-------------------------------------------------------------------------------

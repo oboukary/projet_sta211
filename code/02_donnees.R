@@ -13,10 +13,10 @@ num_cols <- col_names[-c(23:46, 80:116, 123:129)] # colonnes numériques
 #  en numérique
 donnees <- donnees %>% 
   mutate_at(cat_cols, funs(as.character(.))) %>% 
-  mutate_at(cat_cols, funs(as.factor(.))) %>%
+  mutate_at(cat_cols, funs( as.factor(.))) %>%
   mutate_at(num_cols, funs(as.numeric(.)))
 #----- Extraire la partie du nom des colonnes après le point ------------------
-names(donnees) <- sub(".*\\.", "", names(donnees))
+#names(donnees) <- sub(".*\\.", "", names(donnees))
 #------------------------------- habitude---------------------------------------
 data_habitude <- donnees %>% 
   dplyr::select(c(1:46)) %>% 
@@ -47,3 +47,6 @@ quanti_meange <- data_menage %>%
 #-------------------------------------------------------------------------------
 data_afm<- donnees %>% 
   select(-c("TYPEMEN","TYPEHAB", "ACTIVITE", "TYPELOG","Formldéhyde","KVNT2e12","KVNT2e112"))
+
+donnees_impute<-donnees_brutes %>% 
+  dplyr::select(-c("TYPEMEN","TYPEHAB", "ACTIVITE", "TYPELOG","KVNT2e12","KVNT2e112"))

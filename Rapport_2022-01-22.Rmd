@@ -1,0 +1,738 @@
+---
+title: 'Analyse des Correspondances Multiples'
+author: 'Jeu de données quali_menage'
+output:
+  html_document: default
+---
+Ce jeu de données contient 1567 individus et 33 variables.
+
+- - -
+
+```{r, echo = FALSE}
+library(FactoMineR)
+load('/home/boukary/Bureau/2022/STA211/projet_sta211/Workspace.RData')
+```
+### 1. Observation d'individus extrêmes
+L'analyse des graphes détecte des individus singuliers qui influencent très fortement les résultats observés. On soulignera dans un premier temps le caractère extrême de ces individus avant de les retirer pour procéder à la suite de l'analyse.
+En observant le graphe, on peut noter que 134 individus sont très particuliers et contribuent énormément à la construction du plan. Le cumul de leur contribution à la contruction du plan atteint **33.1%**.
+
+```{r, echo = FALSE, fig.align = 'center', fig.height = 3.5, fig.width = 5.5}
+drawn <-
+integer(0)
+par(mar = c(4.1, 4.1, 1.1, 2.1))
+plot.MCA(memory, choix = 'ind', invisible = c('var', 'quali'), select = drawn, title = '', cex = cex)
+```
+
+**Figure 1.1 - Graphe des individus (ACM) avant correction.** 
+*Mise en évidence de 134 individus singuliers.* 
+
+```{r, echo = FALSE, fig.align = 'center', fig.height = 3.5, fig.width = 5.5}
+drawn <-
+integer(0)
+par(mar = c(4.1, 4.1, 1.1, 2.1))
+plot.MCA(res, choix = 'ind', invisible = c('var', 'quali'), select = drawn, title = '', cex = cex)
+```
+
+**Figure 1.2 - Graphe des individus (ACM) après correction.** 
+*Mise en évidence de 134 individus singuliers.* 
+
+```{r, echo = FALSE, fig.align = 'center', fig.height = 3.5, fig.width = 5.5}
+drawn <-
+c("Source_ppale_Res_3", "Occupation_4", "Source_ppale_Res_1", 
+"Occupation_1", "Sexe_1", "Sexe_2", "Structure_menage_3", "Structure_menage_1", 
+"Structure_menage_2")
+par(mar = c(4.1, 4.1, 1.1, 2.1))
+plot.MCA(memory, choix = 'ind', invisible = 'ind', selectMod = drawn, title = '', cex = cex)
+```
+
+**Figure 1.3 - Graphe des variables (ACM) avant correction**
+*Les variables libellées sont celles les mieux représentées sur le plan.*
+
+```{r, echo = FALSE, fig.align = 'center', fig.height = 3.5, fig.width = 5.5}
+drawn <-
+c("Source_ppale_Res_3", "Occupation_4", "Source_ppale_Res_1", 
+"Occupation_1", "Sexe_1", "Sexe_2", "Structure_menage_3", "Structure_menage_1", 
+"Structure_menage_2")
+par(mar = c(4.1, 4.1, 1.1, 2.1))
+plot.MCA(res, choix = 'ind', invisible = 'ind', selectMod = drawn, title = '', cex = cex)
+```
+
+**Figure 1.3 - Graphe des variables (ACM) après correction**
+
+- - -
+
+**L'individu 9** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Source_ppale_Res_5*, *Diplome_Max_8* (factors are sorted from the strongest).
+
+**L'individu 55** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Source_ppale_Res_5*, *Occupation_6*, *Structure_menage_2*, *Diplome_Max_1* (factors are sorted from the strongest).
+
+**L'individu 87** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Source_ppale_Res_5*, *Diplome_Max_7* (factors are sorted from the strongest).
+
+**L'individu 89** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Source_ppale_Res_4*, *Occupation_6* (factors are sorted from the strongest).
+
+**L'individu 110** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Source_ppale_Res_4*, *Diplome_Max_3* (factors are sorted from the strongest).
+
+**L'individu 118** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Diplome_Max_7* (factors are sorted from the strongest).
+
+**L'individu 180** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Diplome_Max_3* (factors are sorted from the strongest).
+
+**L'individu 186** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Source_ppale_Res_5*, *Occupation_6*, *Diplome_Max_9* (factors are sorted from the strongest).
+
+**L'individu 233** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Diplome_Max_8* (factors are sorted from the strongest).
+
+**L'individu 327** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6*, *Structure_menage_2*, *Diplome_Max_1* (factors are sorted from the strongest).
+
+**L'individu 434** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6*, *Diplome_Max_3*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 501** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Source_ppale_Res_5* (factors are sorted from the strongest).
+
+**L'individu 516** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Diplome_Max_7* (factors are sorted from the strongest).
+
+**L'individu 543** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Source_ppale_Res_5*, *Diplome_Max_8* (factors are sorted from the strongest).
+
+**L'individu 552** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Source_ppale_Res_5*, *Diplome_Max_9* (factors are sorted from the strongest).
+
+**L'individu 593** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Diplome_Max_8* (factors are sorted from the strongest).
+
+**L'individu 608** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Source_ppale_Res_5*, *Diplome_Max_8* (factors are sorted from the strongest).
+
+**L'individu 701** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_5*, *Diplome_Max_3*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 770** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_5*, *Diplome_Max_7* (factors are sorted from the strongest).
+
+**L'individu 792** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_5*, *Structure_menage_2*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 804** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_5* (factors are sorted from the strongest).
+
+**L'individu 809** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6*, *Diplome_Max_1*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 856** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_5*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 1004** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 1005** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_5* (factors are sorted from the strongest).
+
+**L'individu 1074** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_5*, *Diplome_Max_3*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 1104** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_5*, *Diplome_Max_1* (factors are sorted from the strongest).
+
+**L'individu 1141** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Source_ppale_Res_4*, *Diplome_Max_3* (factors are sorted from the strongest).
+
+**L'individu 1354** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6*, *Diplome_Max_6*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 1435** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_5*, *Diplome_Max_6* (factors are sorted from the strongest).
+
+**L'individu 1499** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Source_ppale_Res_5*, *Occupation_6*, *Diplome_Max_7* (factors are sorted from the strongest).
+
+**L'individu 1559** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_5*, *Diplome_Max_3* (factors are sorted from the strongest).
+
+**L'individu 21** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Source_ppale_Res_5*, *Structure_menage_2*, *Diplome_Max_8* (factors are sorted from the strongest).
+
+**L'individu 56** :
+
+- est caractérisé par le(s) facteur(s) :
+*Structure_menage_4*, *Source_ppale_Res_5*, *Occupation_6* (factors are sorted from the strongest).
+
+**L'individu 66** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_6*, *Structure_menage_2*, *Diplome_Max_1*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 95** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_4*, *Structure_menage_2*, *Diplome_Max_1*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 97** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_6*, *Structure_menage_2*, *Diplome_Max_1*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 199** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Structure_menage_2* (factors are sorted from the strongest).
+
+**L'individu 238** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Source_ppale_Res_4*, *Structure_menage_2*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 241** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_2*, *Source_ppale_Res_4*, *Occupation_6* (factors are sorted from the strongest).
+
+**L'individu 371** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_6* (factors are sorted from the strongest).
+
+**L'individu 426** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6*, *Diplome_Max_6* (factors are sorted from the strongest).
+
+**L'individu 566** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Source_ppale_Res_4*, *Diplome_Max_1*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 579** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6*, *Diplome_Max_5* (factors are sorted from the strongest).
+
+**L'individu 601** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_6*, *Diplome_Max_1* (factors are sorted from the strongest).
+
+**L'individu 625** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6*, *Diplome_Max_6* (factors are sorted from the strongest).
+
+**L'individu 663** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6*, *Diplome_Max_1*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 686** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6* (factors are sorted from the strongest).
+
+**L'individu 763** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_2*, *Source_ppale_Res_5*, *Occupation_6* (factors are sorted from the strongest).
+
+**L'individu 771** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6* (factors are sorted from the strongest).
+
+**L'individu 814** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Source_ppale_Res_5*, *Diplome_Max_1* (factors are sorted from the strongest).
+
+**L'individu 944** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_6*, *Structure_menage_2*, *Diplome_Max_3* (factors are sorted from the strongest).
+
+**L'individu 958** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6*, *Diplome_Max_5* (factors are sorted from the strongest).
+
+**L'individu 995** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_2*, *Source_ppale_Res_4*, *Occupation_6*, *Diplome_Max_1* (factors are sorted from the strongest).
+
+**L'individu 1002** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6* (factors are sorted from the strongest).
+
+**L'individu 1050** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6*, *Diplome_Max_8* (factors are sorted from the strongest).
+
+**L'individu 1115** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Source_ppale_Res_5*, *Diplome_Max_1* (factors are sorted from the strongest).
+
+**L'individu 1156** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2* (factors are sorted from the strongest).
+
+**L'individu 1196** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6* (factors are sorted from the strongest).
+
+**L'individu 1198** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_6*, *Diplome_Max_9* (factors are sorted from the strongest).
+
+**L'individu 1225** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_6*, *Diplome_Max_8* (factors are sorted from the strongest).
+
+**L'individu 1249** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_6*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 1251** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Source_ppale_Res_5*, *Structure_menage_2*, *Diplome_Max_3*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 1271** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Source_ppale_Res_5*, *Structure_menage_2*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 1332** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_6*, *Diplome_Max_7* (factors are sorted from the strongest).
+
+**L'individu 1341** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_6*, *Diplome_Max_5*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 1387** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6*, *Diplome_Max_9* (factors are sorted from the strongest).
+
+**L'individu 1446** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_6*, *Diplome_Max_6* (factors are sorted from the strongest).
+
+**L'individu 1516** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_6* (factors are sorted from the strongest).
+
+**L'individu 1541** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_6*, *Diplome_Max_1* (factors are sorted from the strongest).
+
+**L'individu 1553** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_6* (factors are sorted from the strongest).
+
+**L'individu 10** :
+
+- est caractérisé par le(s) facteur(s) :
+*Structure_menage_4*, *Occupation_5*, *Diplome_Max_1*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 131** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Diplome_Max_1*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 145** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2* (factors are sorted from the strongest).
+
+**L'individu 162** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 185** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Diplome_Max_3*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 213** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2* (factors are sorted from the strongest).
+
+**L'individu 237** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_1* (factors are sorted from the strongest).
+
+**L'individu 369** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_6* (factors are sorted from the strongest).
+
+**L'individu 381** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 406** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 463** :
+
+- est caractérisé par le(s) facteur(s) :
+*Structure_menage_4*, *Diplome_Max_3*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 478** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Diplome_Max_1*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 489** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_5*, *Diplome_Max_8* (factors are sorted from the strongest).
+
+**L'individu 569** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Diplome_Max_5*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 678** :
+
+- est caractérisé par le(s) facteur(s) :
+*Structure_menage_4*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 688** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_6* (factors are sorted from the strongest).
+
+**L'individu 746** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 836** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2* (factors are sorted from the strongest).
+
+**L'individu 862** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Diplome_Max_8*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 885** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 930** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Diplome_Max_1*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 991** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 1001** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_9* (factors are sorted from the strongest).
+
+**L'individu 1003** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2* (factors are sorted from the strongest).
+
+**L'individu 1032** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_7* (factors are sorted from the strongest).
+
+**L'individu 1146** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2* (factors are sorted from the strongest).
+
+**L'individu 1161** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Type_Prof_2*, *Structure_menage_2*, *Diplome_Max_1* (factors are sorted from the strongest).
+
+**L'individu 1209** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_6*, *Diplome_Max_6* (factors are sorted from the strongest).
+
+**L'individu 1345** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2* (factors are sorted from the strongest).
+
+**L'individu 1398** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Diplome_Max_5*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 1450** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_6* (factors are sorted from the strongest).
+
+**L'individu 1468** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_5* (factors are sorted from the strongest).
+
+**L'individu 1482** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 1487** :
+
+- est caractérisé par le(s) facteur(s) :
+*Structure_menage_4*, *Occupation_5* (factors are sorted from the strongest).
+
+**L'individu 1536** :
+
+- est caractérisé par le(s) facteur(s) :
+*Type_Prof_7*, *Occupation_3*, *Diplome_Max_5* (factors are sorted from the strongest).
+
+**L'individu 1562** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 49** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_7* (factors are sorted from the strongest).
+
+**L'individu 65** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Structure_menage_2*, *Diplome_Max_9* (factors are sorted from the strongest).
+
+**L'individu 67** :
+
+- est caractérisé par le(s) facteur(s) :
+*Diplome_Max_2*, *Source_ppale_Res_4*, *Occupation_2* (factors are sorted from the strongest).
+
+**L'individu 166** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_2*, *Diplome_Max_3* (factors are sorted from the strongest).
+
+**L'individu 188** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2* (factors are sorted from the strongest).
+
+**L'individu 507** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_5*, *Diplome_Max_7*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 594** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Diplome_Max_8* (factors are sorted from the strongest).
+
+**L'individu 597** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2* (factors are sorted from the strongest).
+
+**L'individu 611** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_4*, *Diplome_Max_7*, *Type_Prof_5* (factors are sorted from the strongest).
+
+**L'individu 673** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Source_ppale_Res_4* (factors are sorted from the strongest).
+
+**L'individu 698** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_8* (factors are sorted from the strongest).
+
+**L'individu 708** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_9* (factors are sorted from the strongest).
+
+**L'individu 713** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_2*, *Structure_menage_2* (factors are sorted from the strongest).
+
+**L'individu 732** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_3* (factors are sorted from the strongest).
+
+**L'individu 878** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2* (factors are sorted from the strongest).
+
+**L'individu 950** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_8* (factors are sorted from the strongest).
+
+**L'individu 956** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_5*, *Diplome_Max_6* (factors are sorted from the strongest).
+
+**L'individu 1008** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_2*, *Diplome_Max_3* (factors are sorted from the strongest).
+
+**L'individu 1065** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_5*, *Source_ppale_Res_5*, *Diplome_Max_3* (factors are sorted from the strongest).
+
+**L'individu 1278** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_5* (factors are sorted from the strongest).
+
+**L'individu 1318** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_5*, *Diplome_Max_8* (factors are sorted from the strongest).
+
+**L'individu 1342** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_7* (factors are sorted from the strongest).
+
+**L'individu 1380** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_5*, *Diplome_Max_9* (factors are sorted from the strongest).
+
+**L'individu 1413** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2* (factors are sorted from the strongest).
+
+**L'individu 1436** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_5*, *Occupation_2*, *Diplome_Max_9* (factors are sorted from the strongest).
+
+**L'individu 1484** :
+
+- est caractérisé par le(s) facteur(s) :
+*Occupation_3*, *Source_ppale_Res_4* (factors are sorted from the strongest).
+
+**L'individu 1485** :
+
+- est caractérisé par le(s) facteur(s) :
+*Source_ppale_Res_4*, *Occupation_2*, *Diplome_Max_5* (factors are sorted from the strongest).
+
+Après avoir éliminé ces individus singuliers, on peut explorer le reste des individus par une seconde analyse.
+
+- - -
+
+### 2. Distribution de l'inertie
