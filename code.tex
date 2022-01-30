@@ -70,6 +70,7 @@
 \end{abstract}
 \section{Introduction}
 
+
 %--------------------------------------------------------------------------------------------------
 %             00-  MISE EN PLACE DE L'ENVIRONNEMENT SWEAVE POUR LA GENERATION DU DOCUMENT PDF
 %--------------------------------------------------------------------------------------------------
@@ -80,24 +81,18 @@
 %--------------------------------------------------------------------------------------------------
 
 %--------------------------------------------------------------------------------------------------
-%                     01- SECTION 
-%--------------------------------------------------------------------------------------------------
-\section{Chargement des données et analyses préliminaires}
-Cette partie est consacrée au chargement des données et à la sélection des variables 
-liées au ménage. Certaines variables qui sont codées comme des variables numériques mais qui en réalité sont qualitatives seront recordées en variables facteurs.  
-\subsection{Chargement des données}
-
-%--------------------------------------------------------------------------------------------------
 % IMPORTATION DE LA BASE DE DONNEES ET CREATION DE SOUS BASES DE TRAVAIL
 %--------------------------------------------------------------------------------------------------
 
 
 %--------------------------------------------------------------------------------------------------
-%                 03- ANALYSE UNIVARIEE
+%                     01- SECTION : Analyse exploratoire
 %--------------------------------------------------------------------------------------------------
-Après le chargement des données, l'étape suivante est l'analyse univariée. 
-On peut regarder les statistiques descriptives simples avec la function \textbf{summary} et la fonction \textbf{describe}.
-
+\section{Analyse exploratoire}
+Cette partie est consacrée au chargement des données et à la sélection des variables 
+liées au ménage. Certaines variables qui sont codées comme des variables numériques mais qui en réalité sont qualitatives seront recordées en variables facteurs.  
+% 1.1 Analayse univariée
+\subsection{Analyse univariée}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
@@ -105,30 +100,38 @@ On peut regarder les statistiques descriptives simples avec la function \textbf{
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
+Après le chargement des données, l'étape suivante est l'analyse univariée. 
+On peut regarder les statistiques descriptives simples avec la function \textbf{summary} et la fonction \textbf{describe}.
+% 1.2
+\subsection{Analyse bivariée}
 
-%--------------------------------------------------------------------------------------------------
-%                         04- ANALYSE BIVARIEE
-%----------------------------------------------------------------------------
-%-------------------------------------------------------------------------------
-%  SECTION 1: Variables quantitatives
-%-------------------------------------------------------------------------------
-\subsection{Analyse descriptive des variables quantitatives }
-\subsubsection{Analyse univarié}
 
-\begin{table*}[!h] \centering
-%\ra{1.3}
-\begin{small}
-\begin{tabular}{@{}lrrrrrr@{}}\toprule
-\textbf{Variables}& \textbf{Moyenne} & \textbf{Médiane}& \textbf{Min} & \textbf{Maximum} & \textbf{Variance} & \textbf{Ecart-type} \\ \midrule
-\textbf{Age}          & 51.87 &  52 & 18 & 89 & 209.91 & 14.49\ \\ \hdashline
-\textbf{Revenus}      & 2~573.20 & 2~349 & 535&7~600 & 1~967~644.23&1~402.73   \\ \hdashline
-\textbf{Nombre d'enfants dont âge > 10 ans} &  0.44 & 0 & 0 & 3 & 0.67 & 0.82  \\  \hdashline
-\textbf{Nombre d'enfants dont âge <= 10 ans} &  0.32 & 0 & 0 & 3 & 0.48 & 0.70 \\
-\bottomrule
-\end{tabular}
-\end{small}
-\caption{Statistiques descriptives des variables quantitatives}
-\end{table*}
+
+\subsection{Analyse exploration multidimensionnelle}
+\subsubsection{Analyse en composante principale(ACP)}
+
+\subsubsection{Analyse des correspondances multiples(ACM)}
+
+\subsubsection{Analyse factorielle multiple(AFM)}
+
+
+\subsubsection{AFM sur l'ensemble des variables du jeu de données}
+
+\subsubsection{Classification des individus}
+
+\subsubsection{Classification des variables}
+
+
+\section{Modélisation et prédiction du Formaldéhyde}
+
+
+\subsection{Traitement des données manquantes}
+\subsection{Modélisation}
+\subsubsection{Random  Forest}
+\subsubsection{Fuzzy forest sur les blocs initiaux}
+\subsubsection{Fuzzy forest sur sur les groupes issues de ClusterOfvar}
+\subsubsection{Comparaison et selection de modèle}
+\section{Conclusion}
 
 
 
@@ -147,8 +150,10 @@ chaque groupe de variables. Pour le bloc chaque bloc(ménage, habitude, logement
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.pca\_menage' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -156,8 +161,10 @@ chaque groupe de variables. Pour le bloc chaque bloc(ménage, habitude, logement
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.pca\_menage' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -169,8 +176,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-4-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in get\_eig(X): objet 'res.mca\_menage' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -178,8 +187,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-5-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_menage' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -187,10 +198,12 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-6-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
 
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-6-2} 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_menage' introuvable}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_menage' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -198,8 +211,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-7-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_menage' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -208,8 +223,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-8-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mfa\_menage' introuvable}}\end{kframe}
 \end{knitrout}
 
 \end{mdframed}
@@ -224,8 +241,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-9-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.pca\_logement' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -233,8 +252,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-10-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.pca\_logement' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -246,8 +267,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-11-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in get\_eig(X): objet 'res.mca\_logement' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -255,8 +278,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-12-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_logement' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -264,10 +289,12 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-13-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
 
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-13-2} 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_logement' introuvable}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_logement' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -275,8 +302,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-14-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_logement' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -285,8 +314,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-15-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mfa\_logement' introuvable}}\end{kframe}
 \end{knitrout}
 
 \end{mdframed}
@@ -300,8 +331,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-16-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.pca\_habitude' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -309,8 +342,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-17-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.pca\_habitude' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -322,8 +357,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-18-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in get\_eig(X): objet 'res.mca\_habitude' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -331,8 +368,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-19-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_habitude' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -340,10 +379,12 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-20-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
 
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-20-2} 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_habitude' introuvable}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_habitude' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -351,8 +392,10 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-21-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_habitude' introuvable}}\end{kframe}
 \end{knitrout}
 \end{mdframed}
 \end{minipage}
@@ -361,17 +404,40 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \begin{minipage}{0.49\linewidth}
 \begin{mdframed}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-22-1} 
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mfa\_logement' introuvable}}\end{kframe}
 \end{knitrout}
 
 \end{mdframed}
 \end{minipage}
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in kable\_latex(x = structure(c("{}Name"{}, "{}Number of rows"{}, "{}Number of columns"{}, : argument inutilisé (table.attr = "{}style='width: auto;'\textbackslash{}n \ \ \ \ \ \ \ class='table table-condensed'"{})}}\end{kframe}
+\end{knitrout}
 
 %-------------------------------------------------------------------------------
 %   SECTION 2: Variables qualitatives
 %-------------------------------------------------------------------------------
 
+
+\begin{table*}[!h] \centering
+%\ra{1.3}
+\begin{small}
+\begin{tabular}{@{}lrrrrrr@{}}\toprule
+\textbf{Variables}& \textbf{Moyenne} & \textbf{Médiane}& \textbf{Min} & \textbf{Maximum} & \textbf{Variance} & \textbf{Ecart-type} \\ \midrule
+\textbf{Age}          & 51.87 &  52 & 18 & 89 & 209.91 & 14.49\ \\ \hdashline
+\textbf{Revenus}      & 2~573.20 & 2~349 & 535&7~600 & 1~967~644.23&1~402.73   \\ \hdashline
+\textbf{Nombre d'enfants dont âge > 10 ans} &  0.44 & 0 & 0 & 3 & 0.67 & 0.82  \\  \hdashline
+\textbf{Nombre d'enfants dont âge <= 10 ans} &  0.32 & 0 & 0 & 3 & 0.48 & 0.70 \\
+\bottomrule
+\end{tabular}
+\end{small}
+\caption{Statistiques descriptives des variables quantitatives}
+\end{table*}
 \end{document}
 

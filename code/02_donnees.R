@@ -50,3 +50,10 @@ data_afm<- donnees %>%
 
 donnees_impute<-donnees_brutes %>% 
   dplyr::select(-c("TYPEMEN","TYPEHAB", "ACTIVITE", "TYPELOG","KVNT2e12","KVNT2e112"))
+
+#----- Selection des variables quantitatives du jeu de données ------*/
+data_quanti <- data_afm %>% 
+  dplyr::select_if(is.numeric)
+#----- Selection des variables categorielles ----*/
+data_quali <- data_afm %>% 
+  dplyr::select_if(is.factor)

@@ -83,6 +83,53 @@ y_test<- testdata$Formldéhyde
 
 
 #------ Modélisation avec Fuzzy forest
+custom_ff <- list(type = "Regression", library = "fuzzyforest", loop = NULL)
+custom_ff$parameters <- data.frame(parameter = c("mtry_factor","min_ntree",      
+                                                 "drop_fraction","ntree_factor",
+                                                 "final_ntree ", "keep_fraction"), 
+                                   class = rep("numeric", 6), 
+                                   label = c("mtry_factor", "min_ntree",
+                                             "drop_fraction" ,"ntree_factor",
+                                             "final_ntree ","keep_fraction"))
+custom_ff$grid <- function(x, y, len = NULL, search = "grid") {}
+custom_ff$fit <- function(x, y, module_membership, wts, param, lev, last, weights, classProbs, ...) {
+  ff(x,y, screen_params= screen_control(
+    drop_fraction=param$drop_fraction,
+    keep_fraction = param$keep_fraction, 
+    min_ntree = param$min_ntree,
+    ntree_factor = param$ntree_factor,
+    mtry_factor = param$mtry_factor
+  ),
+  select_params = select_control(drop_fraction=param$drop_fraction,
+                                 keep_fraction = param$keep_fraction, 
+                                 min_ntree = param$min_ntree,
+                                 ntree_factor = param$ntree_factor,
+                                 mtry_factor = param$mtry_factor)
+  , module_membership = module_membership,
+  final_ntree = param$final_ntree
+  )
+}
+custom_ff$predict <- function(modelFit, newdata, preProc = NULL, submodels = NULL)
+  predict(modelFit, newdata)
+custom_ff$prob <- function(modelFit, newdata, preProc = NULL, submodels = NULL)
+  predict(modelFit, newdata, type = "raw")
+custom_ff$sort <- function(x) x[order(x[,1]),]
+custom_ff$levels <- function(x) x$classes
+
+# train model
+control <- trainControl(method="repeatedcv", number=10, repeats=3)
+tunegrid <- expand.grid(drop_fraction = c(0.1, 0.15, 0.2, 0.3, 0.5), 
+                        keep_fraction = c(0.1, 0.15, 0.2, 0.3, 0.5),
+                        ntree_factor  = c(1,2,3),
+                        mtry_factor   = c(1,2,3),
+                        min_ntree     = c(100,200,300, 400,500),
+                        final_ntree   = c(100,200,300, 400,500))
+set.seed(seed)
+custom <- train(Formldéhyde~., data=data.clustofvar, method=custom_ff, metric="Rmse", tuneGrid=tunegrid, trControl=control)
+summary(custom)
+plot(custom)
+
+
 mtry_factor   <- 1; 
 min_ntree     <- 500;  
 drop_fraction <- .5; 

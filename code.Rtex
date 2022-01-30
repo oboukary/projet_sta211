@@ -8,6 +8,7 @@
 \end{abstract}
 \section{Introduction}
 
+
 %--------------------------------------------------------------------------------------------------
 %             00-  MISE EN PLACE DE L'ENVIRONNEMENT SWEAVE POUR LA GENERATION DU DOCUMENT PDF
 %--------------------------------------------------------------------------------------------------
@@ -28,14 +29,6 @@ source(file = "code/00_helpers.R")
 source(file = "code/01_packages.R")
 @
 %--------------------------------------------------------------------------------------------------
-%                     01- SECTION 
-%--------------------------------------------------------------------------------------------------
-\section{Chargement des données et analyses préliminaires}
-Cette partie est consacrée au chargement des données et à la sélection des variables 
-liées au ménage. Certaines variables qui sont codées comme des variables numériques mais qui en réalité sont qualitatives seront recordées en variables facteurs.  
-\subsection{Chargement des données}
-
-%--------------------------------------------------------------------------------------------------
 % IMPORTATION DE LA BASE DE DONNEES ET CREATION DE SOUS BASES DE TRAVAIL
 %--------------------------------------------------------------------------------------------------
 <<Donnees, include=FALSE>>=
@@ -43,38 +36,48 @@ source(file = "code/02_donnees.R")
 @
 
 %--------------------------------------------------------------------------------------------------
-%                 03- ANALYSE UNIVARIEE
+%                     01- SECTION : Analyse exploratoire
 %--------------------------------------------------------------------------------------------------
-Après le chargement des données, l'étape suivante est l'analyse univariée. 
-On peut regarder les statistiques descriptives simples avec la function \textbf{summary} et la fonction \textbf{describe}.
-
+\section{Analyse exploratoire}
+Cette partie est consacrée au chargement des données et à la sélection des variables 
+liées au ménage. Certaines variables qui sont codées comme des variables numériques mais qui en réalité sont qualitatives seront recordées en variables facteurs.  
+% 1.1 Analayse univariée
+\subsection{Analyse univariée}
 <<Analyse Univariée, include=T>>=
 source(file = "code/03_analyse_univariee.R")
 @
+Après le chargement des données, l'étape suivante est l'analyse univariée. 
+On peut regarder les statistiques descriptives simples avec la function \textbf{summary} et la fonction \textbf{describe}.
+% 1.2
+\subsection{Analyse bivariée}
 
-%--------------------------------------------------------------------------------------------------
-%                         04- ANALYSE BIVARIEE
-%----------------------------------------------------------------------------
-%-------------------------------------------------------------------------------
-%  SECTION 1: Variables quantitatives
-%-------------------------------------------------------------------------------
-\subsection{Analyse descriptive des variables quantitatives }
-\subsubsection{Analyse univarié}
 
-\begin{table*}[!h] \centering
-%\ra{1.3}
-\begin{small}
-\begin{tabular}{@{}lrrrrrr@{}}\toprule
-\textbf{Variables}& \textbf{Moyenne} & \textbf{Médiane}& \textbf{Min} & \textbf{Maximum} & \textbf{Variance} & \textbf{Ecart-type} \\ \midrule
-\textbf{Age}          & 51.87 &  52 & 18 & 89 & 209.91 & 14.49\ \\ \hdashline
-\textbf{Revenus}      & 2~573.20 & 2~349 & 535&7~600 & 1~967~644.23&1~402.73   \\ \hdashline
-\textbf{Nombre d'enfants dont âge > 10 ans} &  0.44 & 0 & 0 & 3 & 0.67 & 0.82  \\  \hdashline
-\textbf{Nombre d'enfants dont âge <= 10 ans} &  0.32 & 0 & 0 & 3 & 0.48 & 0.70 \\
-\bottomrule
-\end{tabular}
-\end{small}
-\caption{Statistiques descriptives des variables quantitatives}
-\end{table*}
+
+\subsection{Analyse exploration multidimensionnelle}
+\subsubsection{Analyse en composante principale(ACP)}
+
+\subsubsection{Analyse des correspondances multiples(ACM)}
+
+\subsubsection{Analyse factorielle multiple(AFM)}
+
+
+\subsubsection{AFM sur l'ensemble des variables du jeu de données}
+
+\subsubsection{Classification des individus}
+
+\subsubsection{Classification des variables}
+
+
+\section{Modélisation et prédiction du Formaldéhyde}
+
+
+\subsection{Traitement des données manquantes}
+\subsection{Modélisation}
+\subsubsection{Random  Forest}
+\subsubsection{Fuzzy forest sur les blocs initiaux}
+\subsubsection{Fuzzy forest sur sur les groupes issues de ClusterOfvar}
+\subsubsection{Comparaison et selection de modèle}
+\section{Conclusion}
 
 
 
@@ -82,7 +85,7 @@ source(file = "code/03_analyse_univariee.R")
 %                         05- ANALYSE FACTORIELLE
 %--------------------------------------------------------------------------------------------------
 <<Analyse factorielle, include=FALSE>>=
-source(file = "code/05_analyse_factorielle.R")
+#source(file = "code/05_analyse_factorielle.R")
 @
 
 \par Etant donné la structure en groupe des données, nous allons réaliser des analyses factorielles sur
@@ -331,10 +334,28 @@ fviz_mfa_var(res.mfa_logement, "group")
 \end{mdframed}
 \end{minipage}
 
+<<>>=
+skimr::skim(data_quanti)
+@
 
 %-------------------------------------------------------------------------------
 %   SECTION 2: Variables qualitatives
 %-------------------------------------------------------------------------------
 
+
+\begin{table*}[!h] \centering
+%\ra{1.3}
+\begin{small}
+\begin{tabular}{@{}lrrrrrr@{}}\toprule
+\textbf{Variables}& \textbf{Moyenne} & \textbf{Médiane}& \textbf{Min} & \textbf{Maximum} & \textbf{Variance} & \textbf{Ecart-type} \\ \midrule
+\textbf{Age}          & 51.87 &  52 & 18 & 89 & 209.91 & 14.49\ \\ \hdashline
+\textbf{Revenus}      & 2~573.20 & 2~349 & 535&7~600 & 1~967~644.23&1~402.73   \\ \hdashline
+\textbf{Nombre d'enfants dont âge > 10 ans} &  0.44 & 0 & 0 & 3 & 0.67 & 0.82  \\  \hdashline
+\textbf{Nombre d'enfants dont âge <= 10 ans} &  0.32 & 0 & 0 & 3 & 0.48 & 0.70 \\
+\bottomrule
+\end{tabular}
+\end{small}
+\caption{Statistiques descriptives des variables quantitatives}
+\end{table*}
 \end{document}
 
