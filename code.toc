@@ -1,29 +1,18 @@
 \babel@toc {french}{}\relax 
-\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
-\contentsline {section}{\numberline {2}Analyse exploratoire}{2}{section.2}%
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Analyse exploratoire }{2}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Analyse univariée}{2}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Analyse bivariée}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Analyse exploration multidimensionnelle}{3}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Analyse en composante principale(ACP)}{3}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Analyse des correspondances multiples(ACM)}{3}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Analyse factorielle multiple(AFM)}{3}{subsubsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.4}AFM sur l'ensemble des variables du jeu de données}{3}{subsubsection.2.3.4}%
-\contentsline {subsubsection}{\numberline {2.3.5}Classification des individus}{3}{subsubsection.2.3.5}%
-\contentsline {subsubsection}{\numberline {2.3.6}Classification des variables}{3}{subsubsection.2.3.6}%
-\contentsline {section}{\numberline {3}Modélisation et prédiction du Formaldéhyde}{3}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Traitement des données manquantes}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Modélisation}{3}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Random Forest}{3}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Fuzzy forest sur les blocs initiaux}{3}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Fuzzy forest sur sur les groupes issues de ClusterOfvar}{3}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Comparaison et selection de modèle}{3}{subsubsection.3.2.4}%
-\contentsline {section}{\numberline {4}Conclusion}{3}{section.4}%
-\contentsline {subsubsection}{\numberline {4.0.1}ACP sur les variables quantitatives du bloc ménage}{3}{subsubsection.4.0.1}%
-\contentsline {subsubsection}{\numberline {4.0.2}ACM sur les variables qualitatives du bloc ménage}{4}{subsubsection.4.0.2}%
-\contentsline {subsubsection}{\numberline {4.0.3}AFM sur les variable du bloc ménage}{4}{subsubsection.4.0.3}%
-\contentsline {subsubsection}{\numberline {4.0.4}ACP sur les variables quantitatives du bloc ménage}{4}{subsubsection.4.0.4}%
-\contentsline {subsubsection}{\numberline {4.0.5}ACM sur les variables qualitatives du bloc ménage}{5}{subsubsection.4.0.5}%
-\contentsline {subsubsection}{\numberline {4.0.6}AFM sur les variable du bloc ménage}{5}{subsubsection.4.0.6}%
-\contentsline {subsubsection}{\numberline {4.0.7}ACP sur les variables quantitatives du bloc ménage}{5}{subsubsection.4.0.7}%
-\contentsline {subsubsection}{\numberline {4.0.8}ACM sur les variables qualitatives du bloc ménage}{6}{subsubsection.4.0.8}%
-\contentsline {subsubsection}{\numberline {4.0.9}AFM sur les variable du bloc habitude}{6}{subsubsection.4.0.9}%
+\contentsline {subsection}{\numberline {2.3}Analyse exploration multidimensionnelle}{4}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Analyse en composante principale(ACP)}{5}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Analyse des correspondances multiples(ACM)}{5}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Analyse factorielle multiple(AFM)}{6}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}AFM sur l'ensemble des variables du jeu de données}{7}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.5}Classification des individus}{7}{subsubsection.2.3.5}%
+\contentsline {subsubsection}{\numberline {2.3.6}Classification des variables}{9}{subsubsection.2.3.6}%
+\contentsline {section}{\numberline {3}Modélisation et prédiction du Formaldéhyde}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Traitement des données manquantes}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Modélisation}{9}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Fuzzy forest sur les groupes issues de ClusterOfvar}{10}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Comparaison et selection de modèle}{10}{subsubsection.3.2.2}%
+\contentsline {section}{\numberline {4}Conclusion}{10}{section.4}%

@@ -61,7 +61,9 @@ ggsave("graphiques/indiv_groups.png")
 # 2. Un algorithme itératif de partitionnement 
 cluster_var_tree <- hclustvar(X.quanti=data_quanti, X.quali=data_quali)
 stab <- stability(cluster_var_tree, B=10)
-plot(cluster_var_tree)
+plot(stab)
+png("graphiques/stability_var_clust.png")
+abline(v=c(7,8), col=c("blue", "red"), lty=c(1,2), lwd=c(1, 3))
 rect.hclust(cluster_var_tree, k=8,border=2:9)
 part<-cutreevar(cluster_var_tree,8)
 #-------------------------------------------------------------------------------

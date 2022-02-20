@@ -37,22 +37,16 @@ select_params <- select_control(drop_fraction = drop_fraction,
                                 ntree_factor = ntree_factor,
                                 mtry_factor = mtry_factor)
 
-ff_fit <- ff(X_train, y_train, module_membership = groups,
-             screen_params = screen_params, select_params=select_params,
-             final_ntree = 500)
+ff_fit <- ff(X_train, y_train, 
+             module_membership = groups,
+             screen_params = screen_params, 
+             select_params=select_params,
+             final_ntree = final_ntree)
 dev.off()
 modplot(ff_fit)
 varImp(ff_fit$final_rf)
 final_rf <- ff_fit$final_rf
 final_rf_mse <- tail(final_rf$mse, 1)
-
-#---- Estimation avec WGCNA
-WGCNA_params <- WGCNA_control(p = 6, minModuleSize = 1, nThreads = 1)
-wff_fit <- wff(X_train, y_train, WGCNA_params = WGCNA_params,
-               screen_params = screen_params,
-               select_params = select_params,
-               final_ntree = final_ntree,
-               num_processors = 1, nodesize = nodesize)
 #------- RANDOM FOREST CLASSIQUE AVEC TUNING DES PARAMETRES
 control <- trainControl(method='repeatedcv', 
                         number=10, 
@@ -83,35 +77,29 @@ y_test<- testdata$Formldéhyde
 
 
 #------ Modélisation avec Fuzzy forest
+
+
 mtry_factor   <- 1; 
 min_ntree     <- 500;  
 drop_fraction <- .5; 
 ntree_factor  <- 1
 nodesize      <- 1; 
-final_ntree   <- 500
+final_ntree   <- 5000
 screen_params <- screen_control(drop_fraction = drop_fraction,
                                 keep_fraction = .25, min_ntree = min_ntree,
                                 ntree_factor = ntree_factor,
                                 mtry_factor = mtry_factor)
 select_params <- select_control(drop_fraction = drop_fraction,
-                                number_selected = 5,
                                 min_ntree = min_ntree,
                                 ntree_factor = ntree_factor,
                                 mtry_factor = mtry_factor)
 
 ff_fit <- ff(X_train, y_train, module_membership = groups_cluster_of_vars,
              screen_params = screen_params, select_params=select_params,
-             final_ntree = 500)
+             final_ntree = final_ntree)
 dev.off()
 modplot(ff_fit)
 varImp(ff_fit$final_rf)
 final_rf <- ff_fit$final_rf
 final_rf_mse <- tail(final_rf$mse, 1)
 
-#---- Estimation avec WGCNA
-WGCNA_params <- WGCNA_control(p = 6, minModuleSize = 1, nThreads = 1)
-wff_fit <- wff(X_train, y_train, WGCNA_params = WGCNA_params,
-               screen_params = screen_params,
-               select_params = select_params,
-               final_ntree = final_ntree,
-               num_processors = 1, nodesize = nodesize)

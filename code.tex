@@ -69,8 +69,9 @@
 \begin{abstract}
 \end{abstract}
 \section{Introduction}
-
-
+Le jeu de données CNIL est issu d'une étude menée par L'Observatoire de la Qualité de l'Air Intérieur (OQAI). L'étude a été menée sur un échantillon de 567 ménages suivis sur trois années. Les données ont été collecté en fonctions de trois grands ensembles décrivant les caractéristiques des logements, les habitudes des ménages et la composition des ménages. L'objectif de l'étude est de mesurer la qualité de l'air à l'intérieur des logements. Elle dépend de la présence de nombreux polluants physiques, biologique ou chimiques dont le formaldéhyde. Ce dernier est un polluant atmosphérique omniprésent dans les logements et dont le suivi est considéré comme étant hautement prioritaire par les pouvoirs publics depuis 2006. \par
+Le but de notre de projet est d'expliquer et de prédire le formaldéhyde à partir des caractéristiques des trois ensembles de bloc de variables cités plus haut à savoir : les habitudes des ménages, les caractéristiques des ménages et la composition des ménages. Pour ce faire, nous allons nous appuyer sur différentes méthodes de datamining.
+Afin de structurer notre travail, nous le scindons en deux parties. La première correspond à une exploration de données qui est préalable à tout travail de datamining. Cette étape consiste à analyser le jeu de données en unidimensionnel, en bidimensionnel et en multidimensionnel. Dans la seconde partie nous allons utiliser une méthode d'apprentissage supervisé pour modéliser et prédire le formaldéhyde.
 %--------------------------------------------------------------------------------------------------
 %             00-  MISE EN PLACE DE L'ENVIRONNEMENT SWEAVE POUR LA GENERATION DU DOCUMENT PDF
 %--------------------------------------------------------------------------------------------------
@@ -88,344 +89,18 @@
 %--------------------------------------------------------------------------------------------------
 %                     01- SECTION : Analyse exploratoire
 %--------------------------------------------------------------------------------------------------
-\section{Analyse exploratoire}
-Cette partie est consacrée au chargement des données et à la sélection des variables 
-liées au ménage. Certaines variables qui sont codées comme des variables numériques mais qui en réalité sont qualitatives seront recordées en variables facteurs.  
+\section{Analyse exploratoire }
+Cette partie sera consacrée à l'analyse exploratoire des données.
+Certaines variables qui sont codées comme des variables numériques mais qui en réalité sont qualitatives seront recordées en variables facteurs.\par
+Les blocs logement et habitude sont composés respectivement de 70 variables (dont 32 variables quantitatives et 38 variables qualitatives) et 44 variables (dont 21 variables quantitatives et 23 variables qualitatives). Les caractéristiques des logements sont composées entre autres du type de logement, du type de système de ventilation, d'une information d'existence de garages attenants et des installations utilisées. Les habitudes des ménages sont décrites à travers les tâches quotidiennes des ménages notamment les tâches ménagères, la possession d'animaux de compagnie, l'utilisation de parfum et d'insecticide, etc. Le bloc ménage quant à lui contient 11 variables dont 5 variables quantitatives et 6 variables qualitatives. Ces variables décrivent la composition et la catégorie socioprofessionnelle des ménages interrogés. \par
+Par ailleurs, nous avons supprimé de l'analyse deux variables qualitatives KVN2e12 et KVNT2e112 du bloc logement car elles n'ont pas de variabilité due à l'existence d'une seule modalité.\par
+Pour la suite de cette partie, nous allons uniquement présenter les résultats de l'analyse exploratoire du bloc ménage. Celle des autres blocs sont présentés dans l'annexe.
+
 % 1.1 Analayse univariée
 \subsection{Analyse univariée}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-\begin{verbatim}
-## Description of .
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
-Après le chargement des données, l'étape suivante est l'analyse univariée. 
-On peut regarder les statistiques descriptives simples avec la function \textbf{summary} et la fonction \textbf{describe}.
-% 1.2
-\subsection{Analyse bivariée}
-
-
-
-\subsection{Analyse exploration multidimensionnelle}
-\subsubsection{Analyse en composante principale(ACP)}
-
-\subsubsection{Analyse des correspondances multiples(ACM)}
-
-\subsubsection{Analyse factorielle multiple(AFM)}
-
-
-\subsubsection{AFM sur l'ensemble des variables du jeu de données}
-
-\subsubsection{Classification des individus}
-
-\subsubsection{Classification des variables}
-
-
-\section{Modélisation et prédiction du Formaldéhyde}
-
-
-\subsection{Traitement des données manquantes}
-\subsection{Modélisation}
-\subsubsection{Random  Forest}
-\subsubsection{Fuzzy forest sur les blocs initiaux}
-\subsubsection{Fuzzy forest sur sur les groupes issues de ClusterOfvar}
-\subsubsection{Comparaison et selection de modèle}
-\section{Conclusion}
-
-
-
-%--------------------------------------------------------------------------------------------------
-%                         05- ANALYSE FACTORIELLE
-%--------------------------------------------------------------------------------------------------
-
-
-\par Etant donné la structure en groupe des données, nous allons réaliser des analyses factorielles sur
-chaque groupe de variables. Pour le bloc chaque bloc(ménage, habitude, logement), nous réalisons des \textbf{ACP} sur les variables quantitatives, une \textbf{ACM} sur les variables qualitatives et une \textbf{AFM} sur chaque bloc. L'objectif est de voir s'il existe une différence entre individus par rapport à chaque groupe de variable ou s'il existe des groupes d'individus homogènes par rapport à chaque groupe ou chaque bloc de variables.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  MENAGE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{ACP sur les variables quantitatives du bloc ménage}
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.pca\_menage' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-\hfill
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.pca\_menage' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-
-D'après les résultats de l'ACP sur les variables quantitatives du bloc ménage,
-les deux premières dimensions portent 61.7 de la variabilité contenu dans ce groupe de variables. Cela répresente un part significative. Les variables \textbf{NBPerson},\textbf{NBEnftssup0} et \textbf{NBEnftsinf10} sont fortement corrélés au premier axe factoriel de l'ACP. A l'opposé, les variables  \textbf{Age} et \textbf{Revenus} sont fortement corrélées au deuxième axe factoriel de l'ACP. Les individus(ménages) qui ont de fortes coordonnées sur l'axe 2 sont des ménages relativement aisés et âgés. Ceux qui ont de fortes coordonnées sur l'axe 1 sont des ménages composés de beaucoup de personnes et avec des enfants.
-
-\subsubsection{ACM sur les variables qualitatives du bloc ménage}
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in get\_eig(X): objet 'res.mca\_menage' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-\hfill
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_menage' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-\vfill
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_menage' introuvable}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_menage' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-\hfill
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_menage' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-
-\subsubsection{AFM sur les variable du bloc ménage}
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mfa\_menage' introuvable}}\end{kframe}
-\end{knitrout}
-
-\end{mdframed}
-\end{minipage}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  LOGEMENT
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{ACP sur les variables quantitatives du bloc ménage}
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.pca\_logement' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-\hfill
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.pca\_logement' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-
-D'après les résultats de l'ACP sur les variables quantitatives du bloc ménage,
-les deux premières dimensions portent 61.7 de la variabilité contenu dans ce groupe de variables. Cela répresente un part significative. Les variables \textbf{NBPerson},\textbf{NBEnftssup0} et \textbf{NBEnftsinf10} sont fortement corrélés au premier axe factoriel de l'ACP. A l'opposé, les variables  \textbf{Age} et \textbf{Revenus} sont fortement corrélées au deuxième axe factoriel de l'ACP. Les individus(ménages) qui ont de fortes coordonnées sur l'axe 2 sont des ménages relativement aisés et âgés. Ceux qui ont de fortes coordonnées sur l'axe 1 sont des ménages composés de beaucoup de personnes et avec des enfants.
-
-\subsubsection{ACM sur les variables qualitatives du bloc ménage}
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in get\_eig(X): objet 'res.mca\_logement' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-\hfill
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_logement' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-\vfill
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_logement' introuvable}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_logement' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-\hfill
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_logement' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-
-\subsubsection{AFM sur les variable du bloc ménage}
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mfa\_logement' introuvable}}\end{kframe}
-\end{knitrout}
-
-\end{mdframed}
-\end{minipage}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%   HABITUDE
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsubsection{ACP sur les variables quantitatives du bloc ménage}
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.pca\_habitude' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-\hfill
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.pca\_habitude' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-
-D'après les résultats de l'ACP sur les variables quantitatives du bloc ménage,
-les deux premières dimensions portent 61.7 de la variabilité contenu dans ce groupe de variables. Cela répresente un part significative. Les variables \textbf{NBPerson},\textbf{NBEnftssup0} et \textbf{NBEnftsinf10} sont fortement corrélés au premier axe factoriel de l'ACP. A l'opposé, les variables  \textbf{Age} et \textbf{Revenus} sont fortement corrélées au deuxième axe factoriel de l'ACP. Les individus(ménages) qui ont de fortes coordonnées sur l'axe 2 sont des ménages relativement aisés et âgés. Ceux qui ont de fortes coordonnées sur l'axe 1 sont des ménages composés de beaucoup de personnes et avec des enfants.
-
-\subsubsection{ACM sur les variables qualitatives du bloc ménage}
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in get\_eig(X): objet 'res.mca\_habitude' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-\hfill
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_habitude' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-\vfill
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_habitude' introuvable}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_habitude' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-\hfill
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mca\_habitude' introuvable}}\end{kframe}
-\end{knitrout}
-\end{mdframed}
-\end{minipage}
-
-\subsubsection{AFM sur les variable du bloc habitude}
-\begin{minipage}{0.49\linewidth}
-\begin{mdframed}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in .get\_facto\_class(X): objet 'res.mfa\_logement' introuvable}}\end{kframe}
-\end{knitrout}
-
-\end{mdframed}
-\end{minipage}
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in kable\_latex(x = structure(c("{}Name"{}, "{}Number of rows"{}, "{}Number of columns"{}, : argument inutilisé (table.attr = "{}style='width: auto;'\textbackslash{}n \ \ \ \ \ \ \ class='table table-condensed'"{})}}\end{kframe}
-\end{knitrout}
-
-%-------------------------------------------------------------------------------
-%   SECTION 2: Variables qualitatives
-%-------------------------------------------------------------------------------
-
-
-\begin{table*}[!h] \centering
+Nous commençons par une analyse univariée car elle permet de résumer l'information contenu dans les variables. Elle permet également de connaître la structure, la distribution des données et de détecter les outliers. 
+L'analyse univariée montre que l'âge des ménages varie entre 18 et 89 ans, avec une moyenne de 61 ans. Ils disposent d'un revenu variant entre 535 et 7600 euros avec un revenu moyen de 2574 euros. Toutefois 50\% des ménages touchent un revenu inférieur à 2349 euros et 45\% ont un revenu inférieur à 1799 euro (voir tableau \ref{tab:tab1}).
+\begin{table*}[H] \centering
 %\ra{1.3}
 \begin{small}
 \begin{tabular}{@{}lrrrrrr@{}}\toprule
@@ -434,10 +109,157 @@ les deux premières dimensions portent 61.7 de la variabilité contenu dans ce g
 \textbf{Revenus}      & 2~573.20 & 2~349 & 535&7~600 & 1~967~644.23&1~402.73   \\ \hdashline
 \textbf{Nombre d'enfants dont âge > 10 ans} &  0.44 & 0 & 0 & 3 & 0.67 & 0.82  \\  \hdashline
 \textbf{Nombre d'enfants dont âge <= 10 ans} &  0.32 & 0 & 0 & 3 & 0.48 & 0.70 \\
+\textbf{Nombre de personnes} &  2.47 & 2 & 1 & 8 & 2.005& 1.416 \\
 \bottomrule
 \end{tabular}
 \end{small}
-\caption{Statistiques descriptives des variables quantitatives}
+\caption{Statistiques descriptives des variables quantitatives du bloc ménage}\label{tab:tab1}
 \end{table*}
+Les femmes représentent environ 65\% des personnes interrogées dont 50\% ont un niveau de l'enseignement technique court et seulement 30\% ont un diplôme de l'enseignement supérieur bac +2. Nous constatons la même structure chez les hommes. La principale source de revenus est le salaire et la pension avec respectivement 53\% et 34\% des sources de revenus possibles. Ils sont pour la plupart des cadres supérieurs travaillant dans des professions intermédiaires (24\%) et des ouvriers (20\%) (graphique \ref{fig1:tri_plat})
+\begin{figure}[H]
+\includegraphics[scale=0.7]{graphiques/tri_plat.png}
+\caption{Tri à plat des varaibles qualitatives du bloc ménage} \label{fig1:tri_plat}
+\end{figure}
+Cette analyse univariée nous a permis de s'apercevoir que les variables quantitatives ne sont pas à la même échelle. Nous constatons également que certaines modalités des variables qualitatives sont dominantes comme les cadres supérieurs. Cependant, c'est une analyse préalable qui faudrait approfondir via une analyse bivariée.
+
+% 1.2
+\subsection{Analyse bivariée}
+L'analyse de la matrice de corrélation des variables quantitatives du bloc ménage montre, globalement, une relation faible entre les variables à l'exception le nombre de personnes composant le ménage et le nombre d'enfant quel que soit l'âge(matrice de corrélation \ref{fig2:cor})
+\begin{figure}[H]
+\includegraphics[scale=.6]{graphiques/corrplot.png}
+\caption{Matrice des corrélations des variables qualitatives du bloc ménage} \label{fig2:cor}
+\end{figure}
+L'analyse du $Chi2$ de contingence et le $V$ de Cramer permet de conclure qu'il existe une relation de dépendance entre les variables quantitatives. Toutefois, celle-ci est faible à l'exception de la relation entre la source principale de revenu et l'occupation. (tableau résultat V de cramer \ref{tab2:cramer}).\par
+\begin{table}[H]
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+                   & sexe   & type\_prof & diplome\_max & occupation & source\_ppale\_res & structure\_menage \\ \midrule
+sexe               & 1      &            &              &            &                    &                   \\
+type\_prof         & 0.1634 & 1          &              &            &                    &                   \\
+diplome\_max       & 0.1146 & 0.1435     & 1            &            &                    &                   \\
+occupation         & 0.2677 & 0.2370     & 0.1033       & 1          &                    &                   \\
+source\_ppale\_res & 0.1347 & 0.1824     & 0.1091       & 0.5634     & 1                  &                   \\
+structure\_menage  & 0.3495 & 0.0957     & 0.0750       & 0.1493     & 0.1866             & 1                 \\ \bottomrule
+\end{tabular}%
+}
+\caption{Matrice des V de Cramer}
+\label{tab2:cramer}
+\end{table}
+
+Après avoir terminé l'analyse bidimensionnelle dans laquelle nous n'avons pas trouvé de relation forte entre les différentes variables prises deux à deux, nous passons à l'analyse multidimensionnelle.
+
+\subsection{Analyse exploration multidimensionnelle}
+Dans l'analyse multidimensionnelle, nous avons réalisé une ACP pour les variables quantitatives, une ACM pour les variables qualitatives et une AFM pour les variables mixtes (quantitatives et qualitatives prises ensemble)
+\subsubsection{Analyse en composante principale(ACP)}
+Les résultats de l'ACP sur les données quantitatives des ménages montrent que le premier plan factoriel exprime plus de 67\% de la variabilité. La projection des cinq variables sur les deux premiers axes factoriels montre que le nombre d'enfant (quel que soit leur âge) et le nombre de personnes vivant dans le même foyer sont positivement corrélés à la première composante principale. Le revenu et l'âge sont fortement corrélés à la deuxième composante. Ainsi, deux structures se dégagent. La première structure est composée de l'âge et le revenu. La deuxième structure est formée par les variables nombre de personnes du foyer et le nombre d'enfants inférieur ou supérieur à 10 ans. 
+La projection des individus sur le premier plan factoriel permet de distinguer quatre groupes de ménages :
+\begin{itemize}
+\item des ménages aisés, relativement vieux avec peu de personnes vivant sur le même toit ;
+\item des ménages aisés vivant avec plusieurs personnes sur le même toit avec ou sans enfants 
+\item des ménages très jeune, avec des revenus modeste et peu de personnes vivant sur le même toit. 
+\end{itemize}
+\begin{mdframed}
+\begin{minipage}{0.45\textwidth}
+\begin{figure}[H]
+\includegraphics[]{graphiques/ACP1.png}
+\caption{Graphique individus/variables de l'ACP} \label{fig3:ACP1}
+\end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\begin{figure}[H]
+\includegraphics[]{graphiques/ACP2.png}
+\caption{Cercle de corrélation} \label{fig4:ACP2}
+\end{figure}
+\end{minipage}
+\end{mdframed}
+
+\subsubsection{Analyse des correspondances multiples(ACM)}
+Les résultats de l'ACM montrent que la première et deuxième dimension captent environ 15\% de la variabilité. Les deux catégories « occupation et source principale de ressources » sont fortement corrélées (> 0.70) avec les deux dimensions.  En revanche, les catégories « type de profession », « sexe », « structure de ménage » et le « diplôme le plus élevé » sont faiblement corrélées avec les deux axes.
+La projection des variables qualitatives les plus contributives sur les deux axes montre que :
+Les personnes déclarant recevoir une pension déclarent la retraite comme principale occupation.
+Les étudiants déclarent autres revenus comme source principale
+Les personnes déclarant avoir une activité professionnelle déclarent le salaire comme étant une source principale source de revenu.
+Et enfin, si on regarde l'allure générale du nuage des individus, c'est-à-dire les ménages, on voit qu'elle est particulière et met en évidence quatre classes de ménages bien distinctes. La première bissectrice oppose les individus qui exercent une fonction (salariés) aux étudiants et ceux qui reçoivent un salaire à ceux dont le revenu provient d'un actif financier ou autres. Quant à elle, la deuxième bissectrice oppose ceux ont un diplôme de « fin études primaire » et ceux en «fin du second cycle enseignement général ».
+ 
+\begin{mdframed}
+\begin{minipage}{0.45\textwidth}
+\begin{figure}[H]
+\includegraphics[scale=0.5]{graphiques/MCA1.png}
+\caption{Graphique des variables} \label{fig5:MCA1}
+\end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\begin{figure}[H]
+\includegraphics[scale=0.5]{graphiques/MCA2.png}
+\caption{Graphiques des modalités des variables / Individus } \label{fig6:MCA2}
+\end{figure}
+\end{minipage}
+\hfill
+\end{mdframed}
+
+
+\subsubsection{Analyse factorielle multiple(AFM)}
+Dans le résultat de l'analyse factorielle multiple des ménages, on constate que les coordonnées des groupes de variables qualitatives et quantitatives sont proches sur le premier axe factoriel. Sur l'axe 2 ils ont des groupes très différents sur le second axe factoriel. Cependant lorsqu'on calcul les coefficients Lg et Rv, on constate que les deux groupes de variables pris deux à deux ne sont pas significativement liées. 
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{graphiques/AFM_menage.png}
+\caption{Graphiques des groupes de l'AFM sur le bloc ménage } \label{fig8:AFM1}
+\end{figure}
+
+\subsubsection{AFM sur l'ensemble des variables du jeu de données}
+Lorsqu’on analyse les résultats de l’AFM global, on constate que les groupes de variables quali\_logement et quali\_habitude sont proches sur le premier axe factoriel et un peu éloigné sur le second axe. On constate aussi que les groupes de variables du bloc logement (quantitative et qualitative) sont proches à la fois sur le premier axe factoriel et sur le second axe factoriel. 
+Globalement, les coefficients Lg et Rv permettent de conclure que les différents blocs de variables ne sont pas significativement liés car les valeurs de ces coefficients sont faibles. Ainsi, nous pouvons conclure à la présence d’une structure par bloc dans notre dataset car ils n’ont pas de lien significatif entre eux.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{graphiques/AFM_gglobal.png}
+\caption{Graphiques des groupes de l'AFM sur l'ensemble des variables } \label{fig9:AFM2}
+\end{figure}
+\subsubsection{Classification des individus}
+Dans cette étape nous souhaitons voir s'il existe une structure en groupe dans les individus (ménages) du jeu de données.  Pour cela nous allons réaliser une classification hiérarchique ascendante sur le jeu de données.
+Le but étant de voir s'il existe une structure en groupe au sein des ménages et de calculer les groupes.
+Comme nous avons un jeu de données mixtes, nous allons utiliser l'indice de similarité de Gower. L’objectif de cet indice consiste à mesurer dans quelle mesure deux individus sont semblables. L’indice de Gower varie entre 0 et 1. Dans le package cluster, la fonction daisy permet de calculer la distance de Gower définie par : $D_g = 1- S_g$ avec $D_g$ la distance de Gower et $S_g$ l'indice de similarité de Gower. Avec la distance de Gower, deux individus sont identiques si la distance de Gower vaut 0 et ils sont totalement différents si $D_g$ vaut 1.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{graphiques/optimal_indiv_clusters.png}
+\caption{Graphique résultant de la méthode du coude (Elbow)} \label{fig10:opticlust}
+\end{figure}
+Le graphique \ref{fig10:opticlust} indique que le nombre optimal de cluster est 4
+Nous réalisons un Kmeans sur les résultats de la classification hiérarchique ascendante pour 
+consolider les groupes.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{graphiques/indiv_groups.png}
+\caption{Graphique des clusters} \label{fig11:indiv_cluster}
+\end{figure}
+On observe sur le graphique \ref{fig11:indiv_cluster} 
+\subsubsection{Classification des variables}
+Le but de la classification de variables est de regrouper ensemble des variables fortement corrélées entre elles en les séparant en classe. Nous utilisons le package ClusterOfVar. La méthode de classification des variables avec ClusterOfVar permet de créer des groupes de variables liées entre elles au sein des groupes et hétérogènes à l’extérieur des groupes. L'avantage principale de cette méthode est qu'elle prend en compte des données mixtes. Le critère d’homogénéité d’une classe est la somme des carrés des corrélations (pour les variables quantitatives) et des rapports de corrélations (pour les variables qualitatives) à une variable synthétique (quantitative) résumant au mieux les variables de la classe. La variable synthétique qui maximise ce critère est la première composante principale de l'AFDM. Deux algorithmes de classifications sont implémentés dans ce package :
+\begin{enumerate}
+ \item Un algorithme de classification hiérarchique ascendante à travers la fonction hclustvar 
+\item Un algorithme itératif de partitionnement
+\end{enumerate}
+Après avoir implémenté cet algorithme, nous trouvons huit clusters dont 2 sont analysés dans ce rapport.
+Cluster 1 :  ce cluster regroupe les variables de structure des ménages, les femmes, les activités ménager (sortie des ordures), les produits de beauté (déodorant, soin visage, …)
+Cluster 2 : il rassemble les variables d’habitude des ménages (jardinage, bricolage, séchage de linge dans le logement), l’utilisation d’insecticide, les habitudes de cuisson à l’eau, …
+
+\section{Modélisation et prédiction du Formaldéhyde}
+\subsection{Traitement des données manquantes}
+Dans le jeu de données la variable cible \textit{Formaldéhyde} présente 3\% de valeurs manquantes.
+L'imputation de ces valeurs manquantes est un préalable à l'étape de la modélisation. Nous allons utiliser la méthode d'imputation multiple par chaine de markov MICE(Multiple Imputation by Chained Equations). Cette méthode est basée sur un algorithme Monte-Carlo M
+\subsection{Modélisation}
+Les différentes méthodes de fouille de données nous ont permis voir que les individus(ménages) ont une structure en groupe donc sont hétérogènes en dehors des groupes. 
+Nous avons pu identifier 3 groupes d'individus. Par ailleurs, la classification des variables a permis de mettre en évidence 8 clusters de variables. Cette structure en groupe des individus ne permet pas donc d'appliquer un modèle paramétrique sur l'ensemble du jeu de données. Une alternative pour utiliser des modèles paramétriques serait d'appliquer une modélisation par groupe. L'autre alternative serait d'utiliser des modèles non paramétriques comme les arbres de décisions. Etant donné l'instabilité des résultats des arbres de décisions nous utilisons le choix sera porté sur des modèles d'ensemble de type random forest. L'inconvénient des random forest est que le calcul de l'importance des variables est biaisé lorsque celles-ci sont structurées en blocs et très corrélées au sein des blocs. Ce qui est le cas de notre jeu de données. Une solution pour pallier aux insuffisances des random forest c'est le fuzzy forest. Le fuzzy forest est une extension des random forest et qui permet de calculer l'importance des variables de manière non-biaisée.  
+L'algorithme construit une classification de variables. Ensuite il réalise un random forest sur chaque cluster puis selectionne les variables les plus importantes de ses différents modèles pour réaliser un random forest final. L'importance des variables est calculée finalement à partir de ce dernier modèle de random forest.
+\subsubsection{Fuzzy forest sur les groupes issues de ClusterOfvar}
+
+
+\subsubsection{Comparaison et selection de modèle}
+
+\section{Conclusion}
+
+
 \end{document}
 
